@@ -1,0 +1,120 @@
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
+  return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
+}
+
+export function CTAButton({
+  href,
+  children,
+  variant = "primary",
+}: {
+  href: string;
+  children: ReactNode;
+  variant?: "primary" | "secondary";
+}) {
+  return (
+    <Link href={href} className={`button button--${variant}`}>
+      {children}
+      <Arrow />
+    </Link>
+  );
+}
+
+export function TextLink({
+  href,
+  children,
+  label,
+}: {
+  href: string;
+  children: ReactNode;
+  label?: string;
+}) {
+  return (
+    <Link className="text-link" href={href} aria-label={label}>
+      {children}
+      <Arrow />
+    </Link>
+  );
+}
+
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  id,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  description?: string;
+  id?: string;
+}) {
+  return (
+    <div className="section-heading">
+      <p className="eyebrow">{eyebrow}</p>
+      <h2 id={id}>{title}</h2>
+      {description && <p className="section-description">{description}</p>}
+    </div>
+  );
+}
+
+export function PageIntro({
+  eyebrow,
+  title,
+  description,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  children?: ReactNode;
+}) {
+  return (
+    <section className="page-intro section">
+      <div className="site-container">
+        <p className="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p className="lead">{description}</p>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+export function ImagePlaceholder({
+  label,
+  initials,
+  variant = "portrait",
+}: {
+  label: string;
+  initials?: string;
+  variant?: "portrait" | "hero";
+}) {
+  return (
+    <div
+      className={`image-placeholder image-placeholder--${variant}`}
+      role="img"
+      aria-label={`${label} — image placeholder`}
+    >
+      <span className="placeholder-corner" aria-hidden="true">
+        {variant === "hero"
+          ? "Better together, from the beginning."
+          : "Better Together Therapy"}
+      </span>
+      <span className="placeholder-center" aria-hidden="true">
+        {initials || (
+          <>
+            A place
+            <br />
+            to begin.
+          </>
+        )}
+      </span>
+      <span className="placeholder-label" aria-hidden="true">
+        {label}
+        <span>Image placeholder</span>
+      </span>
+    </div>
+  );
+}

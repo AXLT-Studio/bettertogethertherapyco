@@ -1,69 +1,196 @@
-import Image from "next/image";
+import { AudienceCard, ServiceCard, TherapistCard } from "@/components/cards";
+import { ClosingCTA } from "@/components/closing-cta";
+import { FAQAccordion } from "@/components/faq-accordion";
+import { Hero } from "@/components/hero";
+import { InsuranceStrip } from "@/components/insurance-strip";
+import {
+  CTAButton,
+  ImagePlaceholder,
+  SectionHeading,
+  TextLink,
+} from "@/components/ui";
+import {
+  audiences,
+  faqs,
+  recognitionStatements,
+  services,
+  therapists,
+  values,
+} from "@/lib/content";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Hero />
+      <InsuranceStrip />
+      <section
+        className="section recognition-section"
+        aria-labelledby="recognition-title"
+      >
+        <div className="site-container">
+          <div className="section-heading-row">
+            <SectionHeading
+              eyebrow="You might be here because…"
+              title={
+                <>
+                  Some things have
+                  <br />
+                  felt harder lately.
+                </>
+              }
+              id="recognition-title"
+            />
+            <p className="section-aside">
+              You don’t need a diagnosis, a perfect explanation, or all the
+              answers to start a conversation.
+            </p>
+          </div>
+          <div className="recognition-grid">
+            {recognitionStatements.map((statement, index) => (
+              <article className="recognition-card" key={statement}>
+                <span className="card-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <h3>{statement}</h3>
+              </article>
+            ))}
+          </div>
+          <p className="section-footnote">
+            Whatever brought you here, we can begin there.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+      <section
+        className="section audience-section"
+        aria-labelledby="audience-title"
+      >
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Who we help"
+            title="For every stage of growing."
+            description="Different ages. Different experiences. Care that meets you where you are."
+            id="audience-title"
+          />
+          <div className="audience-grid">
+            {audiences.map((audience, index) => (
+              <AudienceCard
+                key={audience.id}
+                audience={audience}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+      <section className="section" aria-labelledby="services-title">
+        <div className="site-container split-section">
+          <div>
+            <SectionHeading
+              eyebrow="How we can help"
+              title="Support for what’s on your mind."
+              description="A place to understand what’s happening and explore a way forward, together."
+              id="services-title"
+            />
+            <TextLink href="/services">Explore All Services</TextLink>
+          </div>
+          <div className="service-list">
+            {services.map((service, index) => (
+              <ServiceCard key={service.slug} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section
+        className="section founder-section"
+        aria-labelledby="founder-title"
+      >
+        <div className="site-container founder-grid">
+          <ImagePlaceholder label="Samantha Serbin portrait" initials="SS" />
+          <div className="founder-copy">
+            <SectionHeading
+              eyebrow="The story behind Better Together"
+              title="Built on an understanding of real life."
+              id="founder-title"
+            />
+            <p>
+              Before becoming a therapist, Samantha worked in education, where
+              she saw firsthand how emotional health, family dynamics, school
+              pressure, and everyday life can intersect.
+            </p>
+            <p>
+              That perspective is part of the foundation of Better Together
+              Therapy: a growing practice with children, teens, and families at
+              its heart.
+            </p>
+            <div className="founder-signature">
+              <h3>Samantha Serbin, LPC</h3>
+              <p>Founder, Better Together Therapy</p>
+            </div>
+            <div className="button-group">
+              <CTAButton href="/therapists/samantha-serbin" variant="secondary">
+                Meet Samantha
+              </CTAButton>
+              <TextLink href="/therapists">Meet the Team</TextLink>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section" aria-labelledby="team-title">
+        <div className="site-container">
+          <div className="section-heading-row">
+            <SectionHeading
+              eyebrow="Meet the therapists"
+              title="Good care starts with connection."
+              description="Get to know the people behind Better Together. Find an approach that feels right for you."
+              id="team-title"
+            />
+            <TextLink href="/therapists">Meet the Team</TextLink>
+          </div>
+          <div className="therapist-grid">
+            {therapists.map((therapist) => (
+              <TherapistCard key={therapist.slug} therapist={therapist} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section
+        className="section values-section"
+        aria-labelledby="values-title"
+      >
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Why Better Together"
+            title="Thoughtful in the ways that matter."
+            id="values-title"
+          />
+          <div className="values-grid">
+            {values.map((value, index) => (
+              <article key={value.title}>
+                <span className="card-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section" aria-labelledby="faq-title">
+        <div className="site-container split-section">
+          <div>
+            <SectionHeading
+              eyebrow="A little clarity"
+              title="Questions are a good place to start."
+              description="A few things you might be wondering before reaching out."
+              id="faq-title"
+            />
+            <TextLink href="/faq">View All FAQs</TextLink>
+          </div>
+          <FAQAccordion items={faqs} />
+        </div>
+      </section>
+      <ClosingCTA />
+    </>
   );
 }

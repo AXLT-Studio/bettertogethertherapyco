@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Better Together Therapy
 
-## Getting Started
+An initial website outline for a group therapy practice in Cedar Park, Texas. Built with the existing Next.js App Router, TypeScript, and Tailwind CSS setup; no additional project dependencies.
 
-First, run the development server:
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If your environment restricts Turbopack's internal port binding, use `npm run build -- --webpack` or `npm run dev -- --webpack`. The existing Geist font uses `next/font/google` and requires network access when first built. Georgia is the temporary heading font.
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/page.tsx` — homepage, in the requested section order.
+- `src/app/layout.tsx` — shared header, skip link, main landmark, footer, and metadata.
+- `src/app/globals.css` — Tailwind import, temporary design tokens, and responsive shared component styles.
+- `src/components/` — header/mobile navigation, hero, cards, insurance strip, FAQ accordion, closing CTA, footer, and basic typography/link components.
+- `src/lib/content.ts` — navigation, audiences, services, therapists, FAQs, and practice values.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The service and therapist detail pages use `[slug]` routes with `generateStaticParams`. Add an entry to the corresponding content array to add a card and a profile/service route. Unknown slugs return a 404.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Routes
 
-## Deploy on Vercel
+- `/`
+- `/about`
+- `/therapists`
+- `/therapists/samantha-serbin`
+- `/therapists/shelly-kessinger`
+- `/services`
+- `/services/anxiety`
+- `/services/depression`
+- `/services/child-adolescent-therapy`
+- `/services/family-dynamics`
+- `/services/life-transitions`
+- `/insurance-rates`
+- `/faq`
+- `/contact`
+- `/privacy` — additional placeholder so the footer privacy link has a destination.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Audience links go to the matching sections on `/services`. Consultation CTAs go to `/contact#consultation`. FAQs use native `details`/`summary`; mobile navigation supports keyboard use, Escape, outside clicks, and closing when navigating.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Content still to confirm
+
+This is a structural draft, not a launch-ready practice website. Images are labeled placeholders. The palette and serif typography are provisional.
+
+- Verify insurance participation; the four carrier names are examples, not accepted-plan claims.
+- Add session fees, lengths, appointment availability, and in-person/virtual eligibility details.
+- Confirm therapist biographies and specialties. Samantha's supplied LPC credential and education background are included; Shelly's credentials are not assumed.
+- Supply office address, phone, email, social destinations, and an approved privacy policy.
+- Connect the consultation scheduling destination. The contact page currently explains the intended flow; it has no submission form, backend, or appointment collection.
+
+Replace these placeholders before publishing. No analytics or external booking integration has been added.
