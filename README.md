@@ -1,6 +1,6 @@
 # Better Together Therapy
 
-An initial website outline for a group therapy practice in Cedar Park, Texas. Built with the existing Next.js App Router, TypeScript, and Tailwind CSS setup; no additional project dependencies.
+An initial website outline for a group therapy practice offering in-person therapy in Leander, TX, and online therapy throughout Texas and Colorado. Built with the existing Next.js App Router, TypeScript, and Tailwind CSS setup; no additional project dependencies.
 
 ## Development
 
@@ -26,6 +26,7 @@ If your environment restricts Turbopack's internal port binding, use `npm run bu
 - `src/app/globals.css` — Tailwind import, temporary design tokens, and responsive shared component styles.
 - `src/components/` — header/mobile navigation, hero, cards, insurance strip, FAQ accordion, closing CTA, footer, and basic typography/link components.
 - `src/lib/content.ts` — navigation, audiences, services, therapists, FAQs, and practice values.
+- `public/images/therapists/` — supplied headshots, shared across founder sections, team cards, and profiles through `TherapistPortrait` and each therapist's `portrait` entry.
 
 The service and therapist detail pages use `[slug]` routes with `generateStaticParams`. Add an entry to the corresponding content array to add a card and a profile/service route. Unknown slugs return a 404.
 
@@ -51,7 +52,7 @@ Audience links go to the matching sections on `/services`. Consultation CTAs go 
 
 ## Content still to confirm
 
-This is a structural draft, not a launch-ready practice website. Images are labeled placeholders. The palette and serif typography are provisional.
+This is a structural draft, not a launch-ready practice website. Samantha's and Shelly's supplied headshots are in place; the hero image remains a labeled placeholder. The palette and serif typography are provisional.
 
 - Verify insurance participation; the four carrier names are examples, not accepted-plan claims.
 - Add session fees, lengths, appointment availability, and in-person/virtual eligibility details.

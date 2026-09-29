@@ -12,11 +12,11 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: {
     default:
-      "Better Together Therapy | Children, Teens & Families in Cedar Park",
+      "Better Together Therapy | Leander, TX & Online in Texas and Colorado",
     template: "%s | Better Together Therapy",
   },
   description:
-    "Thoughtful therapy for children, teens, adults, and families in Cedar Park, Texas. Get to know Better Together Therapy and find your next step.",
+    "Thoughtful therapy for children, teens, adults, and families. In-person in Leander, TX, and online throughout Texas and Colorado. Find your next step with Better Together Therapy.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

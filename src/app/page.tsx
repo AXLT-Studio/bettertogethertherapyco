@@ -3,12 +3,8 @@ import { ClosingCTA } from "@/components/closing-cta";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { Hero } from "@/components/hero";
 import { InsuranceStrip } from "@/components/insurance-strip";
-import {
-  CTAButton,
-  ImagePlaceholder,
-  SectionHeading,
-  TextLink,
-} from "@/components/ui";
+import { TherapistPortrait } from "@/components/therapist-portrait";
+import { CTAButton, SectionHeading, TextLink } from "@/components/ui";
 import {
   audiences,
   faqs,
@@ -105,7 +101,7 @@ export default function Home() {
         aria-labelledby="founder-title"
       >
         <div className="site-container founder-grid">
-          <ImagePlaceholder label="Samantha Serbin portrait" initials="SS" />
+          <TherapistPortrait therapist={therapists[0]} />
           <div className="founder-copy">
             <SectionHeading
               eyebrow="The story behind Better Together"

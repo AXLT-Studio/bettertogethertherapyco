@@ -105,9 +105,9 @@ export function MobileNav() {
           Contact
         </Link>
         <p>
-          Cedar Park, Texas
+          In-person in Leander, TX
           <br />
-          In-person & online options
+          Online in Texas & Colorado
         </p>
       </nav>
     </div>

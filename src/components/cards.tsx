@@ -1,5 +1,6 @@
 import type { Service, Therapist } from "@/lib/content";
-import { CTAButton, ImagePlaceholder, TextLink } from "./ui";
+import { CTAButton, TextLink } from "./ui";
+import { TherapistPortrait } from "./therapist-portrait";
 
 export function AudienceCard({
   audience,
@@ -54,9 +55,9 @@ export function ServiceCard({
 export function TherapistCard({ therapist }: { therapist: Therapist }) {
   return (
     <article className="therapist-card">
-      <ImagePlaceholder
-        label={`${therapist.name} portrait`}
-        initials={therapist.initials}
+      <TherapistPortrait
+        therapist={therapist}
+        sizes="(min-width: 1440px) 616px, (min-width: 600px) 45vw, 90vw"
       />
       <div className="therapist-card-content">
         <p className="eyebrow">{therapist.role}</p>

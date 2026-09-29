@@ -138,6 +138,7 @@ export type Therapist = {
   credentials: string | null;
   role: string;
   initials: string;
+  portrait?: { src: string; position: string };
   specialty: string;
   biography: string;
   note: string;
@@ -150,6 +151,10 @@ export const therapists: Therapist[] = [
     credentials: "LPC",
     role: "Founder",
     initials: "SS",
+    portrait: {
+      src: "/images/therapists/samantha-serbin.jpg",
+      position: "50% 35%",
+    },
     specialty: "An education-informed perspective on children and families.",
     biography:
       "Before becoming a therapist, Samantha worked in education, where she saw firsthand how emotional health, family dynamics, school pressure, and everyday life can intersect. That perspective is part of the foundation of Better Together Therapy.",
@@ -161,6 +166,10 @@ export const therapists: Therapist[] = [
     credentials: null,
     role: "Therapist",
     initials: "SK",
+    portrait: {
+      src: "/images/therapists/shelly-kessinger.png",
+      position: "50% 30%",
+    },
     specialty: "Areas of focus to be added.",
     biography:
       "Get to know Shelly’s approach to therapy, the people she works with, and what a first conversation might look like. Her full introduction will be added here.",
@@ -186,12 +195,12 @@ export const faqs: FAQ[] = [
   {
     question: "Do you offer in-person therapy?",
     answer:
-      "In-person care in Cedar Park, Texas is part of our practice outline. Office details, therapist availability, and appointment options will be added here.",
+      "Yes. We offer in-person therapy in Leander, TX. Our street address, therapist availability, and appointment details will be added here.",
   },
   {
     question: "Do you offer virtual sessions?",
     answer:
-      "Online therapy options will be listed by therapist. Availability and whether virtual care is appropriate for your needs and location will be confirmed before scheduling.",
+      "Yes. We offer online therapy for clients in Texas and Colorado. Therapist availability and session options will be confirmed before scheduling.",
   },
   {
     question: "How long are sessions?",

@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { ClosingCTA } from "@/components/closing-cta";
-import {
-  CTAButton,
-  ImagePlaceholder,
-  PageIntro,
-  SectionHeading,
-} from "@/components/ui";
+import { TherapistPortrait } from "@/components/therapist-portrait";
+import { CTAButton, PageIntro, SectionHeading } from "@/components/ui";
 import { therapists, values } from "@/lib/content";
 
 export const metadata: Metadata = { title: "About Our Practice" };
@@ -16,11 +12,11 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About Better Together"
         title="People first. Care, together."
-        description="A growing group practice in Cedar Park, Texas, with children, teens, parents, and families at its heart—and room for adults navigating their own next chapter."
+        description="A growing group practice offering in-person therapy in Leander, TX and online therapy across Texas and Colorado. Children, teens, parents, and families are at its heart—with room for adults navigating their own next chapter."
       />
       <section className="section">
         <div className="site-container founder-grid">
-          <ImagePlaceholder label="Samantha Serbin portrait" initials="SS" />
+          <TherapistPortrait therapist={therapists[0]} />
           <div className="content-block">
             <SectionHeading
               eyebrow="Where we began"

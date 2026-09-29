@@ -25,7 +25,8 @@ export function Footer() {
           </nav>
           <div className="footer-contact">
             <p className="eyebrow">Let’s connect</p>
-            <p>Cedar Park, Texas</p>
+            <p>Leander, TX</p>
+            <p className="small-copy">Online in Texas & Colorado</p>
             <p className="small-copy">
               Phone · To be added
               <br />
@@ -37,7 +38,7 @@ export function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Better Together Therapy</p>
           <Link href="/privacy">Privacy Policy</Link>
-          <p>Cedar Park, TX · In-person & online options</p>
+          <p>In-person in Leander, TX · Online in Texas & Colorado</p>
         </div>
       </div>
     </footer>

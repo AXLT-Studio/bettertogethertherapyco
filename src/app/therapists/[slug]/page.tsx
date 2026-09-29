@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CTAButton, ImagePlaceholder, TextLink } from "@/components/ui";
+import { CTAButton, TextLink } from "@/components/ui";
+import { TherapistPortrait } from "@/components/therapist-portrait";
 import { therapists } from "@/lib/content";
 
 export const dynamicParams = false;
@@ -29,10 +30,7 @@ export default async function TherapistProfile({
   return (
     <section className="section">
       <div className="site-container profile-grid">
-        <ImagePlaceholder
-          label={`${therapist.name} portrait`}
-          initials={therapist.initials}
-        />
+        <TherapistPortrait therapist={therapist} preload />
         <div className="profile-copy">
           <TextLink href="/therapists">All Therapists</TextLink>
           <p className="eyebrow">{therapist.role} · Better Together Therapy</p>

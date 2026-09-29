@@ -75,13 +75,17 @@ export default function ContactPage() {
         <div className="site-container split-section">
           <SectionHeading
             eyebrow="Our location"
-            title="Rooted in Cedar Park."
-            description="Cedar Park, Texas. In-person and online options will be confirmed by therapist."
+            title="Rooted in Leander. Connected across two states."
+            description="In-person therapy in Leander, TX, and online therapy for clients throughout Texas and Colorado."
           />
           <dl className="contact-details">
             <div>
               <dt>Office</dt>
-              <dd>Cedar Park, Texas · Street address to be added</dd>
+              <dd>Leander, TX · Street address to be added</dd>
+            </div>
+            <div>
+              <dt>Online therapy</dt>
+              <dd>Available in Texas and Colorado</dd>
             </div>
             <div>
               <dt>Phone</dt>

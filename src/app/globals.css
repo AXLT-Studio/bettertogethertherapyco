@@ -545,7 +545,7 @@
     display: grid;
     gap: 2rem;
   }
-  .founder-grid > .image-placeholder {
+  .founder-grid > .therapist-portrait {
     aspect-ratio: 5 / 4;
     background: #e1d9d1;
     color: #746151;
@@ -568,14 +568,28 @@
     display: grid;
     gap: 2.5rem;
   }
+  .therapist-portrait {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--background);
+  }
+  .therapist-portrait > img {
+    object-fit: cover;
+  }
+  .therapist-portrait > .image-placeholder {
+    height: 100%;
+  }
   .therapist-card {
     display: flex;
     flex-direction: column;
   }
-  .therapist-card .image-placeholder {
+  .therapist-card .therapist-portrait {
     aspect-ratio: 6 / 5;
   }
-  .therapist-card:nth-child(even) .image-placeholder {
+  .therapist-card:nth-child(even) .therapist-portrait {
     background: var(--rose);
     color: #746151;
   }
@@ -767,7 +781,7 @@
     display: grid;
     gap: 2.5rem;
   }
-  .profile-grid > .image-placeholder {
+  .profile-grid > .therapist-portrait {
     max-width: 34rem;
   }
   .profile-copy h1 {
@@ -923,7 +937,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
     }
-    .therapist-card .image-placeholder {
+    .therapist-card .therapist-portrait {
       aspect-ratio: 4 / 4.2;
     }
     .service-link-label {
@@ -1029,7 +1043,7 @@
       gap: clamp(3rem, 8vw, 8rem);
       align-items: center;
     }
-    .founder-grid > .image-placeholder {
+    .founder-grid > .therapist-portrait {
       aspect-ratio: 4 / 5;
     }
     .founder-copy {
@@ -1038,7 +1052,7 @@
     .therapist-grid {
       gap: 3rem;
     }
-    .therapist-card .image-placeholder {
+    .therapist-card .therapist-portrait {
       aspect-ratio: 6 / 4.5;
     }
     .values-grid {
@@ -1063,7 +1077,7 @@
       gap: clamp(3rem, 7vw, 7rem);
       align-items: start;
     }
-    .profile-grid > .image-placeholder {
+    .profile-grid > .therapist-portrait {
       position: sticky;
       top: 8rem;
     }
