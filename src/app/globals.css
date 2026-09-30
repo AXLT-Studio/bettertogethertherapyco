@@ -706,6 +706,8 @@
     display: grid;
     gap: 3rem;
     max-width: 72.5rem;
+    margin-left: max(var(--gutter), calc((100% - 80rem) / 2));
+    margin-right: auto;
   }
   .services-index-intro .section-heading {
     max-width: 26rem;
