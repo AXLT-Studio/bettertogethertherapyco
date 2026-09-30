@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ServiceCard } from "@/components/cards";
 import { ClosingCTA } from "@/components/closing-cta";
-import { PageIntro, SectionHeading, TextLink } from "@/components/ui";
+import { PageIntro, SectionHeading } from "@/components/ui";
 import { audiences, services } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Therapy Services" };
@@ -40,21 +41,29 @@ export default function ServicesPage() {
             title="Care for your stage of life."
             description="The right starting point looks different for everyone."
           />
-          <div>
-            {audiences.map((audience) => (
+          <div className="services-index-list">
+            {audiences.map((audience, index) => (
               <article
-                className="audience-detail"
+                className="service-index-item"
                 id={audience.id}
                 key={audience.id}
               >
-                <h3>{audience.title}</h3>
-                <p>{audience.detail}</p>
-                <TextLink
+                <Link
+                  className="service-index-row"
                   href={`/services/${audience.serviceSlug}`}
-                  label={`Explore support for ${audience.title.toLowerCase()}`}
+                  aria-label={`Explore support for ${audience.title.toLowerCase()}`}
                 >
-                  Explore support
-                </TextLink>
+                  <span className="service-index-number" aria-hidden="true">
+                    0{index + 1}
+                  </span>
+                  <span className="service-index-copy">
+                    <h3>{audience.title}</h3>
+                    <p>{audience.detail}</p>
+                  </span>
+                  <span className="service-index-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
               </article>
             ))}
           </div>
