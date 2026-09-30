@@ -1421,7 +1421,7 @@
       align-items: center;
     }
     .services-index-intro {
-      align-self: center;
+      align-self: start;
     }
     .service-index-row {
       grid-template-columns: 1.75rem minmax(0, 1fr) auto;
