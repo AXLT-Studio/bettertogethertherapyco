@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { navigation, practiceLinks } from "@/lib/content";
+import {
+  getPracticeLinkAttributes,
+  navigation,
+  practiceLinks,
+} from "@/lib/content";
 import { Wordmark } from "./header";
 
 export function Footer() {
@@ -20,6 +24,7 @@ export function Footer() {
               <Link
                 key={href}
                 href={href}
+                {...getPracticeLinkAttributes(href)}
                 className={
                   href === practiceLinks.clientPortal
                     ? "button button--secondary client-portal-link"
@@ -27,13 +32,16 @@ export function Footer() {
                 }
               >
                 {label}
+                {href === practiceLinks.clientPortal && (
+                  <span aria-hidden="true">↗</span>
+                )}
               </Link>
             ))}
             <Link href="/contact">Contact</Link>
           </nav>
           <div className="footer-contact">
             <p className="eyebrow">Let’s connect</p>
-            <p>Leander, TX</p>
+            <p>Greater Austin Area</p>
             <p className="small-copy">Online in Texas & Colorado</p>
             <p className="small-copy">
               Phone · To be added
@@ -46,7 +54,7 @@ export function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Better Together Therapy</p>
           <Link href="/privacy">Privacy Policy</Link>
-          <p>In-person in Leander, TX · Online in Texas & Colorado</p>
+          <p>In-person in the Greater Austin Area · Online in Texas & Colorado</p>
         </div>
       </div>
     </footer>

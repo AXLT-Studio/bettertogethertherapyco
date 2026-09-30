@@ -67,9 +67,7 @@ export function TherapistCard({ therapist }: { therapist: Therapist }) {
             <span className="credentials">, {therapist.credentials}</span>
           )}
         </h3>
-        {!therapist.credentials && (
-          <p className="small-copy">Credentials to be confirmed</p>
-        )}
+        <p className="small-copy">{therapist.professionalTitle}</p>
         <p>{therapist.specialty}</p>
         <CTAButton href={`/therapists/${therapist.slug}`} variant="secondary">
           <span>

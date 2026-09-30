@@ -110,7 +110,7 @@ export function MobileNav() {
           Contact
         </Link>
         <p>
-          In-person in Leander, TX
+          In-person in The Greater Austin Area
           <br />
           Online in Texas & Colorado
         </p>
@@ -120,7 +120,7 @@ export function MobileNav() {
             href={practiceLinks.consultation}
             onClick={() => setOpen(false)}
           >
-            Book a Consultation<span aria-hidden="true">↗</span>
+            Book a Consultation
           </a>
         </div>
       </nav>
@@ -138,7 +138,7 @@ export function Header() {
           <NavLinks />
         </nav>
         <a className="header-cta" href={practiceLinks.consultation}>
-          Book a Consultation<span aria-hidden="true">↗</span>
+          Book a Consultation
         </a>
         <MobileNav key={pathname} />
       </div>

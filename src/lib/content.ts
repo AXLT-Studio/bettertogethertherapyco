@@ -4,6 +4,17 @@ export const practiceLinks = {
     "https://bettertogethertherapy.sessionshealth.com/clients/sign_in",
 } as const;
 
+export function getPracticeLinkAttributes(href: string) {
+  const opensInNewTab =
+    href === practiceLinks.consultation || href === practiceLinks.clientPortal;
+
+  return {
+    target: opensInNewTab ? "_blank" : undefined,
+    rel: opensInNewTab ? "noopener noreferrer" : undefined,
+    title: opensInNewTab ? "Opens in a new tab" : undefined,
+  };
+}
+
 export const navigation = [
   { label: "About", href: "/about" },
   { label: "Therapists", href: "/therapists" },
@@ -144,45 +155,144 @@ export type Therapist = {
   name: string;
   credentials: string | null;
   role: string;
+  professionalTitle: string;
   initials: string;
   portrait?: { src: string; position: string };
   specialty: string;
-  biography: string;
-  note: string;
+  metaDescription: string;
+  biography: string[];
+  approach: {
+    summary: string;
+    introduction: string;
+    focusAreas: string[];
+    description: string;
+  };
+  background: string[];
+  therapeuticApproach?: {
+    introduction: string;
+    methods: string[];
+    conclusion: string;
+  };
+  workingTogether: string[];
+  sessionLocations?: { inPerson: string; online: string };
 };
 
-export const therapists: Therapist[] = [
-  {
-    slug: "samantha-serbin",
-    name: "Samantha Serbin",
-    credentials: "LPC",
-    role: "Founder",
-    initials: "SS",
-    portrait: {
-      src: "/images/therapists/samantha-serbin.jpg",
-      position: "50% 35%",
-    },
-    specialty: "An education-informed perspective on children and families.",
-    biography:
-      "Before becoming a therapist, Samantha worked in education, where she saw firsthand how emotional health, family dynamics, school pressure, and everyday life can intersect. That perspective is part of the foundation of Better Together Therapy.",
-    note: "Full biography, areas of focus, session options, and current availability to be added.",
+export const samanthaSerbin: Therapist = {
+  slug: "samantha-serbin",
+  name: "Samantha Serbin",
+  credentials: "LPC",
+  role: "Founder",
+  professionalTitle: "Licensed Professional Counselor",
+  initials: "SS",
+  portrait: {
+    src: "/images/therapists/samantha-serbin.jpg",
+    position: "50% 35%",
   },
-  {
-    slug: "shelly-kessinger",
-    name: "Shelly Kessinger",
-    credentials: null,
-    role: "Therapist",
-    initials: "SK",
-    portrait: {
-      src: "/images/therapists/shelly-kessinger.png",
-      position: "50% 30%",
-    },
-    specialty: "Areas of focus to be added.",
-    biography:
-      "Get to know Shelly’s approach to therapy, the people she works with, and what a first conversation might look like. Her full introduction will be added here.",
-    note: "Credentials, full biography, areas of focus, session options, and current availability to be confirmed.",
+  specialty:
+    "Support for children, teens, adults, and families navigating anxiety, depression, school stress, and life transitions.",
+  metaDescription:
+    "Meet Samantha Serbin, LPC, founder of Better Together Therapy. Therapy for children, teens, adults, and families in the Greater Austin Area and online across Texas and Colorado.",
+  biography: [
+    "Before becoming a therapist, Samantha worked in education, where she saw firsthand how emotional health, school pressure, family dynamics, and major life transitions can shape a young person’s experience.",
+    "That perspective continues to guide her work today. Samantha helps children, teens, adults, and families better understand what is happening beneath the surface, work through patterns that may be keeping them stuck, and create meaningful, lasting change.",
+    "Based in the Greater Austin Area, Samantha offers in-person therapy in the Greater Austin Area and online therapy throughout Texas and Colorado.",
+  ],
+  approach: {
+    summary:
+      "Thoughtful, practical therapy shaped by experience in both education and mental health.",
+    introduction: "Samantha works with clients navigating:",
+    focusAreas: [
+      "Anxiety",
+      "Depression",
+      "Child & adolescent concerns",
+      "Family dynamics",
+      "Life transitions",
+      "School and academic stress",
+      "Self-esteem and identity",
+      "Parent-child relationships",
+    ],
+    description:
+      "Her approach is collaborative and individualized, with a focus on understanding the root of the concern rather than simply managing what appears on the surface.",
   },
-];
+  background: [
+    "Samantha earned her BA in Secondary Education from Arizona State University before beginning her career as a teacher.",
+    "After several years in education, she returned to graduate school and earned her Master’s in Clinical Psychology from Pepperdine University, with an emphasis in Marriage and Family Therapy.",
+    "Her experience in both education and counseling gives her a unique understanding of the connection between emotional health, family relationships, school environments, and the challenges children and young adults face as they grow.",
+  ],
+  workingTogether: [
+    "Therapy with Samantha is supportive, collaborative, and grounded in the belief that meaningful change begins with understanding ourselves more clearly.",
+    "She creates space for clients to be honest about what is difficult while also helping them identify practical ways to move forward.",
+    "Whether she is working with a child, teenager, adult, or parent, Samantha’s goal is to help clients feel understood, supported, and more confident navigating what comes next.",
+  ],
+  sessionLocations: { inPerson: "Greater Austin Area", online: "Texas & Colorado" },
+};
+
+export const shellyKessinger: Therapist = {
+  slug: "shelly-kessinger",
+  name: "Shelly Kessinger",
+  credentials: null,
+  role: "Therapist",
+  professionalTitle: "Counselor · 16+ Years of Experience",
+  initials: "SK",
+  portrait: {
+    src: "/images/therapists/shelly-kessinger.png",
+    position: "50% 30%",
+  },
+  specialty:
+    "Relationship and communication support for couples, individuals, families, and youth, with practical tools for everyday life.",
+  metaDescription:
+    "Meet Shelly Kessinger, a counselor with 16+ years of experience specializing in relationships and communication for couples, individuals, families, and youth.",
+  biography: [
+    "Shelly is a relationship and communication specialist with more than 16 years of experience in mental health and counseling.",
+    "She works with couples, individuals, families, and youth, helping clients make sense of complicated emotions, recognize the patterns affecting their relationships, and develop practical tools for meaningful change.",
+    "Her style is warm and approachable, while also being direct, collaborative, and focused on helping clients move forward.",
+  ],
+  approach: {
+    summary:
+      "Making complicated emotions and relationship patterns easier to understand — and easier to change.",
+    introduction: "Shelly specializes in:",
+    focusAreas: [
+      "Couples counseling",
+      "Communication difficulties",
+      "Relationship conflict",
+      "Rebuilding trust",
+      "Infidelity recovery",
+      "Emotional disconnection",
+      "Family relationships",
+      "Individual counseling",
+      "Youth counseling",
+      "Life and relationship transitions",
+    ],
+    description:
+      "She has a particular strength in helping couples understand one another more clearly, rebuild emotional connection, and replace unproductive communication patterns with practical skills they can use outside of therapy.",
+  },
+  background: [
+    "Shelly earned her Bachelor of Science in Psychology from the University of Texas at Austin in 2006 and her Master of Education in Counseling from the University of Houston in 2009.",
+    "Her experience spans nonprofit counseling centers, inpatient care, intensive outpatient programs, and private practice, giving her experience working with clients across a wide range of concerns and stages of life.",
+  ],
+  therapeuticApproach: {
+    introduction:
+      "Shelly individualizes treatment around each client’s needs and goals rather than relying on a one-size-fits-all approach.",
+    methods: [
+      "Gottman Method",
+      "Emotionally Focused Therapy (EFT)",
+      "Cognitive Behavioral Therapy (CBT)",
+      "Dialectical Behavior Therapy (DBT)",
+      "Motivational Interviewing",
+      "Solution-Focused Therapy",
+    ],
+    conclusion:
+      "The specific approach depends on the client, the relationship, and what they are hoping to change.",
+  },
+  workingTogether: [
+    "Clients often describe Shelly as warm, down-to-earth, and easy to talk to.",
+    "She balances compassion with directness and has a natural ability to break complex emotional issues into clear, manageable pieces.",
+    "Sessions are not only about understanding what is happening. Shelly also emphasizes practical tools, communication skills, and strategies clients can carry into everyday life.",
+    "Her goal is to help clients leave therapy with both greater insight and a clearer idea of what to do next.",
+  ],
+};
+
+export const therapists: Therapist[] = [samanthaSerbin, shellyKessinger];
 
 export type FAQ = {
   question: string;
@@ -202,7 +312,7 @@ export const faqs: FAQ[] = [
   {
     question: "Do you offer in-person therapy?",
     answer:
-      "Yes. We offer in-person therapy in Leander, TX. Our street address, therapist availability, and appointment details will be added here.",
+      "Yes. We offer in-person therapy in the Greater Austin Area. Our street address, therapist availability, and appointment details will be added here.",
   },
   {
     question: "Do you offer virtual sessions?",

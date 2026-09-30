@@ -6,7 +6,7 @@ export function Hero() {
       <div className="hero-copy">
         <p className="eyebrow">
           <span className="location-dot" aria-hidden="true" />
-          In-person in Leander, TX · Online in Texas & Colorado
+          In-person in the Greater Austin Area · Online in Texas & Colorado
         </p>
         <h1 id="hero-title">
           Helping kids, teens, and families feel <em>more like themselves</em>{" "}

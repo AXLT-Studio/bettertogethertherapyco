@@ -25,10 +25,6 @@ export default function TherapistsPage() {
               <TherapistCard key={therapist.slug} therapist={therapist} />
             ))}
           </div>
-          <p className="placeholder-note">
-            Full profiles, areas of focus, and appointment availability will be
-            added as practice details are confirmed.
-          </p>
         </div>
       </section>
       <ClosingCTA />

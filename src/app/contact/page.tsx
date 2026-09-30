@@ -77,13 +77,13 @@ export default function ContactPage() {
         <div className="site-container split-section">
           <SectionHeading
             eyebrow="Our location"
-            title="Rooted in Leander. Connected across two states."
-            description="In-person therapy in Leander, TX, and online therapy for clients throughout Texas and Colorado."
+            title="Rooted in the Greater Austin Area. Connected across two states."
+            description="In-person therapy in the Greater Austin Area, and online therapy for clients throughout Texas and Colorado."
           />
           <dl className="contact-details">
             <div>
               <dt>Office</dt>
-              <dd>Leander, TX · Street address to be added</dd>
+              <dd>Greater Austin Area · Street address to be added</dd>
             </div>
             <div>
               <dt>Online therapy</dt>

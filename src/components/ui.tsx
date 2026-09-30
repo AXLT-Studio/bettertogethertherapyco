@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { getPracticeLinkAttributes } from "@/lib/content";
 
 export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
@@ -14,8 +15,13 @@ export function CTAButton({
   children: ReactNode;
   variant?: "primary" | "secondary";
 }) {
+  const linkAttributes = getPracticeLinkAttributes(href);
   return (
-    <Link href={href} className={`button button--${variant}`}>
+    <Link
+      href={href}
+      className={`button button--${variant}`}
+      {...linkAttributes}
+    >
       {children}
       <Arrow />
     </Link>
@@ -31,8 +37,14 @@ export function TextLink({
   children: ReactNode;
   label?: string;
 }) {
+  const linkAttributes = getPracticeLinkAttributes(href);
   return (
-    <Link className="text-link" href={href} aria-label={label}>
+    <Link
+      className="text-link"
+      href={href}
+      aria-label={label}
+      {...linkAttributes}
+    >
       {children}
       <Arrow />
     </Link>

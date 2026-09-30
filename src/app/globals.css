@@ -822,6 +822,38 @@
   .profile-copy > .text-link {
     margin-bottom: 1.5rem;
   }
+  .profile-prose > p + p {
+    margin-top: 1rem;
+  }
+  .profile-list {
+    display: grid;
+    gap: 0.5rem 2rem;
+    margin-block: 1rem 1.5rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+    color: var(--muted);
+  }
+  .profile-list li::marker {
+    color: var(--accent);
+  }
+  .profile-locations {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .profile-locations > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+  .profile-locations dt {
+    font-weight: 600;
+  }
+  .profile-locations dd {
+    color: var(--muted);
+  }
   .rate-list {
     margin: 1.5rem 0 0;
   }
@@ -929,6 +961,9 @@
   }
 
   @media (min-width: 600px) {
+    .profile-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
     .header-inner {
       gap: 1.25rem;
     }

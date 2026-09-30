@@ -9,6 +9,7 @@ import {
   audiences,
   faqs,
   recognitionStatements,
+  samanthaSerbin,
   services,
   therapists,
   values,
@@ -101,29 +102,31 @@ export default function Home() {
         aria-labelledby="founder-title"
       >
         <div className="site-container founder-grid">
-          <TherapistPortrait therapist={therapists[0]} />
+          <TherapistPortrait therapist={samanthaSerbin} />
           <div className="founder-copy">
             <SectionHeading
               eyebrow="The story behind Better Together"
               title="Built on an understanding of real life."
               id="founder-title"
             />
-            <p>
-              Before becoming a therapist, Samantha worked in education, where
-              she saw firsthand how emotional health, family dynamics, school
-              pressure, and everyday life can intersect.
-            </p>
+            <p>{samanthaSerbin.biography[0]}</p>
+            <p>{samanthaSerbin.biography[1]}</p>
             <p>
               That perspective is part of the foundation of Better Together
               Therapy: a growing practice with children, teens, and families at
               its heart.
             </p>
             <div className="founder-signature">
-              <h3>Samantha Serbin, LPC</h3>
-              <p>Founder, Better Together Therapy</p>
+              <h3>
+                {samanthaSerbin.name}, {samanthaSerbin.credentials}
+              </h3>
+              <p>{samanthaSerbin.role}, Better Together Therapy</p>
             </div>
             <div className="button-group">
-              <CTAButton href="/therapists/samantha-serbin" variant="secondary">
+              <CTAButton
+                href={`/therapists/${samanthaSerbin.slug}`}
+                variant="secondary"
+              >
                 Meet Samantha
               </CTAButton>
               <TextLink href="/therapists">Meet the Team</TextLink>

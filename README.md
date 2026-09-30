@@ -25,7 +25,7 @@ If your environment restricts Turbopack's internal port binding, use `npm run bu
 - `src/app/layout.tsx` — shared header, skip link, main landmark, footer, and metadata.
 - `src/app/globals.css` — Tailwind import, temporary design tokens, and responsive shared component styles.
 - `src/components/` — header/mobile navigation, hero, cards, insurance strip, FAQ accordion, closing CTA, footer, and basic typography/link components.
-- `src/lib/content.ts` — navigation, audiences, services, therapists, FAQs, and practice values.
+- `src/lib/content.ts` — navigation, audiences, services, therapists, FAQs, and practice values. Therapist entries include the supplied biographies, education, focus areas, and approaches; profiles, cards, and founder introductions share this content.
 - `public/images/therapists/` — supplied headshots, shared across founder sections, team cards, and profiles through `TherapistPortrait` and each therapist's `portrait` entry.
 
 The service and therapist detail pages use `[slug]` routes with `generateStaticParams`. Add an entry to the corresponding content array to add a card and a profile/service route. Unknown slugs return a 404.
@@ -48,7 +48,7 @@ The service and therapist detail pages use `[slug]` routes with `generateStaticP
 - `/contact`
 - `/privacy` — additional placeholder so the footer privacy link has a destination.
 
-Audience links go to the matching sections on `/services`. Consultation CTAs open the [Sessions Health request form](https://bettertogethertherapy.sessionshealth.com/request) in the same tab. The desktop/mobile navigation and footer include a lower-emphasis [Client Portal](https://bettertogethertherapy.sessionshealth.com/clients/sign_in) link. Both destinations are defined in `practiceLinks` in `src/lib/content.ts`. FAQs use native `details`/`summary`; mobile navigation supports keyboard use, Escape, outside clicks, and closing when navigating.
+Audience links go to the matching sections on `/services`. Consultation CTAs open the [Sessions Health request form](https://bettertogethertherapy.sessionshealth.com/request) in a new tab. The desktop/mobile navigation and footer include an outlined [Client Portal](https://bettertogethertherapy.sessionshealth.com/clients/sign_in) button with an arrow that also opens in a new tab. Both destinations and their shared new-tab behavior are defined in `src/lib/content.ts`. FAQs use native `details`/`summary`; mobile navigation supports keyboard use, Escape, outside clicks, and closing when navigating.
 
 ## Content still to confirm
 
@@ -56,7 +56,6 @@ This is a structural draft, not a launch-ready practice website. Samantha's and 
 
 - Verify insurance participation; the four carrier names are examples, not accepted-plan claims.
 - Add session fees, lengths, appointment availability, and in-person/virtual eligibility details.
-- Confirm therapist biographies and specialties. Samantha's supplied LPC credential and education background are included; Shelly's credentials are not assumed.
 - Supply office address, phone, email, social destinations, and an approved privacy policy.
 
 Replace these placeholders before publishing. Consultation requests and client sign-in are handled on Sessions Health via external links; this site has no local submission form or appointment collection backend. No analytics has been added.
