@@ -811,6 +811,26 @@
   .detail-list li:first-child {
     border-top: 1px solid var(--line);
   }
+  .pending-plans {
+    margin-top: 2.5rem;
+  }
+  .pending-plans .detail-list {
+    margin-top: 0.75rem;
+  }
+  .pending-plans li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .coverage-note {
+    margin-bottom: 1.25rem;
+  }
+  .private-pay-benefits {
+    margin-top: 2.5rem;
+  }
+  .private-pay-benefits h3 {
+    font-size: 1.5rem;
+  }
   .audience-detail {
     padding: 2rem 0;
     border-top: 1px solid var(--line);
@@ -981,6 +1001,15 @@
   }
 
   @media (min-width: 600px) {
+    .insurance-plan-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+    }
+    .insurance-plan-list li:first-child,
+    .insurance-plan-list li:nth-child(2) {
+      border-top: 1px solid var(--line);
+    }
     .profile-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }

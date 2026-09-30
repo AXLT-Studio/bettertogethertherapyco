@@ -1,4 +1,4 @@
-import { insuranceNames } from "@/lib/content";
+import { featuredInsuranceNames } from "@/lib/content";
 import { TextLink } from "./ui";
 
 export function InsuranceStrip() {
@@ -15,17 +15,17 @@ export function InsuranceStrip() {
           </h2>
           <ul
             className="insurance-names"
-            aria-label="Example insurance carriers, not yet confirmed"
+            aria-label="Selected insurance carriers"
           >
-            {insuranceNames.map((name) => (
+            {featuredInsuranceNames.map((name) => (
               <li key={name}>{name}</li>
             ))}
           </ul>
           <TextLink href="/insurance-rates#coverage">Check Coverage</TextLink>
         </div>
         <p className="insurance-note">
-          Insurance names are placeholders. Participation and plan coverage to
-          be confirmed.
+          Participation varies by therapist, location, and plan. Please confirm
+          coverage before scheduling.
         </p>
       </div>
     </section>

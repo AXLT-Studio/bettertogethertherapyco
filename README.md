@@ -1,6 +1,6 @@
 # Better Together Therapy
 
-An initial website outline for a group therapy practice offering in-person therapy in Leander, TX, and online therapy throughout Texas and Colorado. Built with the existing Next.js App Router, TypeScript, and Tailwind CSS setup; no additional project dependencies.
+An initial website outline for a group therapy practice offering in-person therapy in the Greater Austin Area, with a physical office in Leander, Texas, and online therapy throughout Texas and Colorado. Built with the existing Next.js App Router, TypeScript, and Tailwind CSS setup; no additional project dependencies.
 
 ## Development
 
@@ -54,8 +54,8 @@ Audience links go to the matching sections on `/services`. Consultation CTAs ope
 
 This is a structural draft, not a launch-ready practice website. Samantha's and Shelly's supplied headshots are in place; the hero image remains a labeled placeholder. The palette and serif typography are provisional.
 
-- Verify insurance participation; the four carrier names are examples, not accepted-plan claims.
-- Add session fees, lengths, appointment availability, and in-person/virtual eligibility details.
+- Confirm therapist-specific insurance participation and each client’s plan benefits; Oscar and Oxford remain pending.
+- Add appointment availability and in-person/virtual eligibility details.
 - Supply office address, phone, email, social destinations, and an approved privacy policy.
 
 Replace these placeholders before publishing. Consultation requests and client sign-in are handled on Sessions Health via external links; this site has no local submission form or appointment collection backend. No analytics has been added.

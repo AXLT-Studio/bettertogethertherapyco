@@ -83,7 +83,7 @@ export default function ContactPage() {
           <dl className="contact-details">
             <div>
               <dt>Office</dt>
-              <dd>Greater Austin Area · Street address to be added</dd>
+              <dd>Leander, Texas · Street address to be added</dd>
             </div>
             <div>
               <dt>Online therapy</dt>

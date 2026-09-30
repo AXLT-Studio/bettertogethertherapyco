@@ -26,10 +26,26 @@ export const navigation = [
 
 export const insuranceNames = [
   "Aetna",
+  "Anthem Blue Cross Blue Shield Colorado",
+  "Blue Cross Blue Shield of Texas",
+  "Blue Cross Blue Shield of Massachusetts",
+  "Carelon Behavioral Health",
+  "Cigna",
+  "Horizon Blue Cross Blue Shield of New Jersey",
+  "Independence Blue Cross",
+  "Optum",
+  "Quest Behavioral Health",
+  "UnitedHealthcare",
+];
+
+export const featuredInsuranceNames = [
+  "Aetna",
   "Blue Cross Blue Shield",
   "Cigna",
   "UnitedHealthcare",
 ];
+
+export const pendingInsuranceNames = ["Oscar", "Oxford"];
 
 export const recognitionStatements = [
   "Your child seems overwhelmed by everything.",
@@ -224,7 +240,10 @@ export const samanthaSerbin: Therapist = {
     "She creates space for clients to be honest about what is difficult while also helping them identify practical ways to move forward.",
     "Whether she is working with a child, teenager, adult, or parent, Samantha’s goal is to help clients feel understood, supported, and more confident navigating what comes next.",
   ],
-  sessionLocations: { inPerson: "Greater Austin Area", online: "Texas & Colorado" },
+  sessionLocations: {
+    inPerson: "Greater Austin Area",
+    online: "Texas & Colorado",
+  },
 };
 
 export const shellyKessinger: Therapist = {
@@ -305,7 +324,7 @@ export const faqs: FAQ[] = [
   {
     question: "Do you accept insurance?",
     answer:
-      "Insurance participation is being confirmed. The carrier names shown in this outline are placeholders, not a verified list of accepted plans. Coverage and costs need to be confirmed for your plan and therapist before booking.",
+      "Better Together Therapy works with several major insurance plans through Headway and Alma. Participation varies by therapist, state, and individual plan, so please confirm your benefits before your first appointment.",
     href: "/insurance-rates",
     linkLabel: "Explore insurance & rates",
   },
@@ -322,7 +341,7 @@ export const faqs: FAQ[] = [
   {
     question: "How long are sessions?",
     answer:
-      "Session lengths and fees will be listed once confirmed. They may vary by appointment type; these details will be discussed before you book.",
+      "Initial intake, individual, family, and couples therapy sessions are 53 minutes. Complimentary consultations are 15 minutes.",
   },
   {
     question: "How do I know which therapist is the right fit?",

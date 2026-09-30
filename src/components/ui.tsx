@@ -10,7 +10,7 @@ export function CTAButton({
   href,
   children,
   variant = "primary",
-  arrow = true,
+  arrow = false,
 }: {
   href: string;
   children: ReactNode;

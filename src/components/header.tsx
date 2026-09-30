@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigation, practiceLinks } from "@/lib/content";
+import {
+  getPracticeLinkAttributes,
+  navigation,
+  practiceLinks,
+} from "@/lib/content";
 
 export function Wordmark() {
   return (
@@ -24,6 +28,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       key={href}
       href={href}
+      {...getPracticeLinkAttributes(href)}
       className={
         href === practiceLinks.clientPortal
           ? "button button--secondary client-portal-link"
@@ -36,6 +41,9 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
       }
     >
       {label}
+      {href === practiceLinks.clientPortal && (
+        <span aria-hidden="true">↗</span>
+      )}
     </Link>
   ));
 }
@@ -110,7 +118,7 @@ export function MobileNav() {
           Contact
         </Link>
         <p>
-          In-person in The Greater Austin Area
+          In-person in the Greater Austin Area
           <br />
           Online in Texas & Colorado
         </p>
@@ -118,6 +126,7 @@ export function MobileNav() {
           <a
             className="button button--primary"
             href={practiceLinks.consultation}
+            {...getPracticeLinkAttributes(practiceLinks.consultation)}
             onClick={() => setOpen(false)}
           >
             Book a Consultation
@@ -137,7 +146,11 @@ export function Header() {
         <nav className="desktop-navigation" aria-label="Main navigation">
           <NavLinks />
         </nav>
-        <a className="header-cta" href={practiceLinks.consultation}>
+        <a
+          className="header-cta"
+          href={practiceLinks.consultation}
+          {...getPracticeLinkAttributes(practiceLinks.consultation)}
+        >
           Book a Consultation
         </a>
         <MobileNav key={pathname} />
