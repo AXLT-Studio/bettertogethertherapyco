@@ -318,44 +318,65 @@ export type FAQ = {
   answer: string;
   href?: string;
   linkLabel?: string;
+  showOnHome?: boolean;
 };
 
-export const faqs: FAQ[] = [
+export const faqPageItems: FAQ[] = [
   {
     question: "Do you accept insurance?",
     answer:
-      "Better Together Therapy works with several major insurance plans through Headway and Alma. Participation varies by therapist, state, and individual plan, so please confirm your benefits before your first appointment.",
+      "Yes. Better Together Therapy works with several major insurance plans through Headway and Alma. Coverage can vary by therapist and individual plan, so we recommend confirming your benefits before scheduling. Visit our Insurance & Rates page for current participating plans and private-pay information.",
     href: "/insurance-rates",
-    linkLabel: "Explore insurance & rates",
+    linkLabel: "Insurance & Rates",
+    showOnHome: true,
+  },
+  {
+    question: "How much does therapy cost?",
+    answer:
+      "Cost depends on whether you use insurance or choose private pay. Better Together Therapy offers both options. Current private-pay rates, participating insurance plans, and coverage information are available on our Insurance & Rates page.",
+    href: "/insurance-rates",
+    linkLabel: "Insurance & Rates",
   },
   {
     question: "Do you offer in-person therapy?",
     answer:
-      "Yes. We offer in-person therapy in the Greater Austin Area. Our street address, therapist availability, and appointment details will be added here.",
+      "Yes. We offer in-person therapy from our Leander office, serving clients throughout the Greater Austin Area. Our office is located at 1640 Highland Falls, Suite 802, Leander, TX 78641.",
+    showOnHome: true,
   },
   {
     question: "Do you offer virtual sessions?",
     answer:
-      "Yes. We offer online therapy for clients in Texas and Colorado. Therapist availability and session options will be confirmed before scheduling.",
+      "Yes. Online therapy is available to clients throughout Texas and Colorado. Virtual sessions can be a flexible and convenient option for many clients, and your therapist can help determine whether online or in-person care is the better fit for your needs.",
+    showOnHome: true,
   },
   {
     question: "How long are sessions?",
     answer:
-      "Initial intake, individual, family, and couples therapy sessions are 53 minutes. Complimentary consultations are 15 minutes.",
+      "Standard therapy sessions are approximately 53 minutes. Complimentary consultations are 15 minutes. Session length may vary depending on the type of appointment.",
+    showOnHome: true,
+  },
+  {
+    question: "How long does therapy typically last?",
+    answer:
+      "There isn’t one set timeline for therapy. Some clients find that a shorter period of focused support meets their needs, while others benefit from longer-term work. Your therapist will regularly check in with you about your goals, progress, and what continues to feel helpful.",
   },
   {
     question: "How do I know which therapist is the right fit?",
     answer:
-      "Start by getting to know our therapists and their approaches. A consultation is an opportunity to share what you’re looking for and ask questions about working together.",
+      "Finding the right therapist is personal. Our therapist profiles outline each clinician’s specialties, approach, and the clients they most often work with. You can also start with a complimentary consultation if you’re unsure where to begin.",
     href: "/therapists",
-    linkLabel: "Meet the therapists",
+    linkLabel: "Therapist profiles",
+    showOnHome: true,
   },
   {
     question: "What should I expect during the first appointment?",
     answer:
-      "The first appointment is a chance to get to know one another and talk about what brings you to therapy. Specific intake steps, paperwork, and information for parents will be added here.",
+      "Your first session is a chance to talk about what brought you to therapy, what you’ve been experiencing, and what you hope to get from the process. Your therapist will also spend time getting to know you, answering questions, and beginning to identify goals for your work together.",
+    showOnHome: true,
   },
 ];
+
+export const faqs = faqPageItems.filter((item) => item.showOnHome);
 
 export const values = [
   {

@@ -39,24 +39,29 @@ export function Footer() {
           </nav>
           <div className="footer-contact">
             <p className="eyebrow">Let’s connect</p>
-            <p>Greater Austin Area</p>
-            <div className="footer-office">
-              <p className="small-copy">In-person office</p>
-              <address>
-                1640 Highland Falls, Suite 802
-                <br />
-                Leander, TX 78641
-              </address>
+            <div className="footer-contact-groups">
+              <div className="footer-contact-group">
+                <p className="footer-contact-label">In person</p>
+                <address>
+                  1640 Highland Falls, Suite 802
+                  <br />
+                  Leander, TX 78641
+                </address>
+              </div>
+              <div className="footer-contact-group">
+                <p className="footer-contact-label">Online</p>
+                <p className="footer-contact-detail">Texas &amp; Colorado</p>
+              </div>
+              <div className="footer-contact-group">
+                <p className="footer-contact-label">Contact</p>
+                <div className="footer-contact-links">
+                  <a href="tel:+15125980312">(512) 598-0312</a>
+                  <a href="mailto:info@bettertogethertherapy.co">
+                    info@bettertogethertherapy.co
+                  </a>
+                </div>
+              </div>
             </div>
-            <p className="small-copy">Online in Texas & Colorado</p>
-            <p className="small-copy">
-              Phone · <a href="tel:+15125980312">(512) 598-0312</a>
-              <br />
-              Email ·{" "}
-              <a href="mailto:info@bettertogethertherapy.co">
-                info@bettertogethertherapy.co
-              </a>
-            </p>
           </div>
         </div>
         <div className="footer-bottom">

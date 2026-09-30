@@ -14,9 +14,9 @@ export default function TherapistsPage() {
         title="Find someone you can talk to."
         description="The relationship matters. Get to know our therapists, explore their perspectives, and find your next step."
       >
-        <TextLink href={practiceLinks.consultation}>
+{/*         <TextLink href={practiceLinks.consultation}>
           Need help finding a fit?
-        </TextLink>
+        </TextLink> */}
       </PageIntro>
       <section className="section" aria-label="Our therapists">
         <div className="site-container">

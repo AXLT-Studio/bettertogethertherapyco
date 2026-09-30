@@ -991,20 +991,48 @@
     text-underline-offset: 4px;
   }
   .footer-contact .eyebrow {
-    margin-bottom: 0.7rem;
+    margin-bottom: 1.9rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
   }
-  .footer-contact p + p {
-    margin-top: 0.6rem;
+  .footer-contact-groups {
+    display: grid;
+    gap: 1.65rem;
   }
-  .footer-office {
-    margin-block: 1rem;
+  .footer-contact-label {
+    margin-bottom: 0.45rem;
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  .footer-office address {
-    margin-top: 0.2rem;
+  .footer-location {
+    color: var(--foreground);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .footer-contact-group address,
+  .footer-contact-detail,
+  .footer-contact-links {
     color: var(--muted);
-    font-size: 0.82rem;
-    font-style: normal;
+    font-size: 0.95rem;
+    font-weight: 400;
     line-height: 1.55;
+  }
+  .footer-contact-group address {
+    margin-top: 0.4rem;
+    font-style: normal;
+  }
+  .footer-contact-links {
+    display: grid;
+    gap: 0.15rem;
+  }
+  .footer-contact-links a {
+    overflow-wrap: anywhere;
   }
   .footer-bottom {
     display: flex;
