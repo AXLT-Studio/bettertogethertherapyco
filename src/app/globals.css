@@ -539,9 +539,40 @@
     text-align: right;
   }
   .audience-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background: var(--sage);
   }
+  .audience-section::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: -8rem;
+    left: -8rem;
+    width: clamp(24rem, 38vw, 36rem);
+    height: clamp(17rem, 25vw, 23rem);
+    border-radius: 67% 33% 58% 42% / 36% 63% 37% 64%;
+    background: rgba(200, 209, 194, 0.16);
+    transform: rotate(7deg) skewX(-7deg);
+  }
+  .audience-section::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: -11rem;
+    bottom: -5rem;
+    width: clamp(24rem, 36vw, 34rem);
+    height: clamp(15rem, 24vw, 22rem);
+    border: 1px solid rgba(70, 83, 65, 0.15);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 52% 48% 62% 38% / 61% 42% 58% 39%;
+    transform: rotate(-12deg);
+  }
   .audience-layout {
+    position: relative;
+    z-index: 1;
     display: grid;
     gap: 2.5rem;
   }
@@ -561,54 +592,34 @@
   }
   .audience-card .card-index {
     position: relative;
-    z-index: 1;
-    color: #c8d0c2;
+    z-index: 2;
+    color: #cdd2c7;
     font-family: var(--font-serif);
     font-size: clamp(4rem, 8vw, 5.5rem);
     font-weight: 400;
     line-height: 0.9;
     letter-spacing: -0.06em;
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.8);
   }
   .audience-shape {
     position: absolute;
-    top: -1.6rem;
-    right: -1.3rem;
-    width: 8.5rem;
-    height: 7.5rem;
-    background: #d8dfd1;
-    border-radius: 62% 38% 48% 52% / 42% 58% 42% 58%;
-    transform: rotate(12deg);
-  }
-  .audience-card:nth-child(2) .audience-shape {
-    top: -1.2rem;
-    right: -1.8rem;
-    background: #ead8cf;
-    border-radius: 38% 62% 55% 45% / 62% 40% 60% 38%;
-    transform: rotate(-9deg);
-  }
-  .audience-card:nth-child(3) .audience-shape {
-    top: -1.8rem;
-    right: -0.8rem;
-    background: #bcc8b5;
-    border-radius: 55% 45% 35% 65% / 38% 62% 38% 62%;
-    transform: rotate(24deg);
-  }
-  .audience-card:nth-child(4) .audience-shape {
-    top: -1rem;
-    right: -1.5rem;
-    background: #e8dfcd;
-    border-radius: 45% 55% 68% 32% / 58% 36% 64% 42%;
-    transform: rotate(-18deg);
+    z-index: 1;
+    top: -2.1875rem;
+    right: -2.8125rem;
+    display: block;
+    width: 11.875rem;
+    height: auto;
+    pointer-events: none;
   }
   .audience-card h3 {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     margin-top: auto;
     font-size: 1.9rem;
   }
   .audience-card p {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     font-size: 0.87rem;
     margin-top: 0.75rem;
     margin-bottom: 1rem;
@@ -617,6 +628,9 @@
     position: static;
     margin-top: auto;
     align-self: flex-start;
+  }
+  .audience-card .text-link-label {
+    z-index: 3;
   }
   .audience-card .text-link::before {
     content: "";
