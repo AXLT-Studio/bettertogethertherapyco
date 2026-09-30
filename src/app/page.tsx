@@ -60,7 +60,7 @@ export default function Home() {
         className="section audience-section"
         aria-labelledby="audience-title"
       >
-        <div className="site-container">
+        <div className="site-container audience-layout">
           <SectionHeading
             eyebrow="Who we help"
             title="For every stage of growing."

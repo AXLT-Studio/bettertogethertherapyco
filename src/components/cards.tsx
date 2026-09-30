@@ -14,6 +14,7 @@ export function AudienceCard({
       <span className="card-index" aria-hidden="true">
         0{index + 1}
       </span>
+      <span className="audience-shape" aria-hidden="true" />
       <h3>{audience.title}</h3>
       <p>{audience.description}</p>
       <TextLink

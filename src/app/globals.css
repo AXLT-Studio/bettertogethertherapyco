@@ -527,31 +527,109 @@
   .recognition-card .card-index {
     padding-top: 0.2rem;
   }
+  .recognition-section .section-aside {
+    width: min(100%, 18ch);
+    margin-left: auto;
+    color: var(--accent);
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: right;
+  }
   .audience-section {
     background: var(--sage);
+  }
+  .audience-layout {
+    display: grid;
+    gap: 2.5rem;
   }
   .audience-grid {
     display: grid;
     gap: 1rem;
   }
   .audience-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid #bfc8b7;
-    padding: 1.5rem;
+    min-height: 19rem;
+    overflow: hidden;
+    border: 1px solid rgba(70, 83, 65, 0.16);
+    background: var(--background);
+    padding: 1.4rem;
+  }
+  .audience-card .card-index {
+    position: relative;
+    z-index: 1;
+    color: #c8d0c2;
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 8vw, 5.5rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+  }
+  .audience-shape {
+    position: absolute;
+    top: -1.6rem;
+    right: -1.3rem;
+    width: 8.5rem;
+    height: 7.5rem;
+    background: #d8dfd1;
+    border-radius: 62% 38% 48% 52% / 42% 58% 42% 58%;
+    transform: rotate(12deg);
+  }
+  .audience-card:nth-child(2) .audience-shape {
+    top: -1.2rem;
+    right: -1.8rem;
+    background: #ead8cf;
+    border-radius: 38% 62% 55% 45% / 62% 40% 60% 38%;
+    transform: rotate(-9deg);
+  }
+  .audience-card:nth-child(3) .audience-shape {
+    top: -1.8rem;
+    right: -0.8rem;
+    background: #bcc8b5;
+    border-radius: 55% 45% 35% 65% / 38% 62% 38% 62%;
+    transform: rotate(24deg);
+  }
+  .audience-card:nth-child(4) .audience-shape {
+    top: -1rem;
+    right: -1.5rem;
+    background: #e8dfcd;
+    border-radius: 45% 55% 68% 32% / 58% 36% 64% 42%;
+    transform: rotate(-18deg);
   }
   .audience-card h3 {
-    margin-top: 1.4rem;
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
     font-size: 1.9rem;
   }
   .audience-card p {
+    position: relative;
+    z-index: 1;
     font-size: 0.87rem;
     margin-top: 0.75rem;
     margin-bottom: 1rem;
   }
   .audience-card .text-link {
+    position: static;
     margin-top: auto;
     align-self: flex-start;
+  }
+  .audience-card .text-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+  .audience-card:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  .audience-card:hover .text-link-label::after {
+    transform: scaleX(1);
   }
   .split-section {
     display: grid;
@@ -1174,9 +1252,16 @@
       margin-top: 1.2rem;
       font-size: 1.55rem;
     }
-    .audience-grid,
     .values-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .audience-layout {
+      grid-template-columns: minmax(13rem, 0.28fr) minmax(0, 0.72fr);
+      gap: clamp(2.5rem, 4vw, 4.5rem);
+      align-items: start;
+    }
+    .audience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .audience-card {
       padding: 1.6rem;
@@ -1250,6 +1335,12 @@
   }
 
   @media (min-width: 1100px) {
+    .audience-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .audience-card {
+      min-height: 23rem;
+    }
     .header-inner {
       min-height: 100px;
       gap: 2rem;
