@@ -48,12 +48,12 @@ export const featuredInsuranceNames = [
 export const pendingInsuranceNames = ["Oscar", "Oxford"];
 
 export const recognitionStatements = [
-  "Your child seems overwhelmed by everything.",
+  "Your child feels overwhelmed.",
   "Your teenager has stopped talking to you.",
-  "Every small disagreement turns into a bigger conflict.",
-  "You’re doing everything you can, but something still feels off.",
+  "Small disagreements keep becoming big conflicts.",
+  "You’re doing your best, but something still feels off.",
   "Anxiety is affecting school, work, sleep, or relationships.",
-  "A big life change has made the familiar feel unfamiliar.",
+  "A major change has made life feel unfamiliar.",
 ];
 
 export const audiences = [

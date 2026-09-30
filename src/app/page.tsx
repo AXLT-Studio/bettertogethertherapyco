@@ -38,8 +38,7 @@ export default function Home() {
               id="recognition-title"
             />
             <p className="section-aside">
-              You don’t need a diagnosis, a perfect explanation, or all the
-              answers to start a conversation.
+              You don’t need all the answers to begin.
             </p>
           </div>
           <div className="recognition-grid">
