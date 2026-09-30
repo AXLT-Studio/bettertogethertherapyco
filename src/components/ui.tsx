@@ -45,7 +45,7 @@ export function TextLink({
       aria-label={label}
       {...linkAttributes}
     >
-      {children}
+      <span className="text-link-label">{children}</span>
       <Arrow />
     </Link>
   );
