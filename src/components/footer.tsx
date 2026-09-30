@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navigation } from "@/lib/content";
+import { navigation, practiceLinks } from "@/lib/content";
 import { Wordmark } from "./header";
 
 export function Footer() {
@@ -17,7 +17,15 @@ export function Footer() {
           </div>
           <nav className="footer-navigation" aria-label="Footer navigation">
             {navigation.map(({ label, href }) => (
-              <Link key={href} href={href}>
+              <Link
+                key={href}
+                href={href}
+                className={
+                  href === practiceLinks.clientPortal
+                    ? "button button--secondary client-portal-link"
+                    : undefined
+                }
+              >
                 {label}
               </Link>
             ))}

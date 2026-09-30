@@ -5,7 +5,7 @@ import {
   SectionHeading,
   TextLink,
 } from "@/components/ui";
-import { insuranceNames } from "@/lib/content";
+import { insuranceNames, practiceLinks } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Insurance & Rates" };
 
@@ -38,7 +38,9 @@ export default function InsurancePage() {
                 </li>
               ))}
             </ul>
-            <TextLink href="/contact#consultation">Ask About Coverage</TextLink>
+            <TextLink href={practiceLinks.consultation}>
+              Ask About Coverage
+            </TextLink>
           </div>
           <aside className="info-panel">
             <p className="eyebrow">Before your appointment</p>
@@ -81,7 +83,7 @@ export default function InsurancePage() {
               </div>
             </dl>
             <div className="button-group">
-              <CTAButton href="/contact#consultation">
+              <CTAButton href={practiceLinks.consultation}>
                 Discuss Your Options
               </CTAButton>
             </div>

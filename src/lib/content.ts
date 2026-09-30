@@ -1,9 +1,16 @@
+export const practiceLinks = {
+  consultation: "https://bettertogethertherapy.sessionshealth.com/request",
+  clientPortal:
+    "https://bettertogethertherapy.sessionshealth.com/clients/sign_in",
+} as const;
+
 export const navigation = [
   { label: "About", href: "/about" },
   { label: "Therapists", href: "/therapists" },
   { label: "Services", href: "/services" },
   { label: "Insurance & Rates", href: "/insurance-rates" },
   { label: "FAQ", href: "/faq" },
+  { label: "Client Portal", href: practiceLinks.clientPortal },
 ];
 
 export const insuranceNames = [

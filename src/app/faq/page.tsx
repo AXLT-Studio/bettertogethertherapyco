@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ClosingCTA } from "@/components/closing-cta";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { PageIntro, SectionHeading, TextLink } from "@/components/ui";
-import { faqs } from "@/lib/content";
+import { faqs, practiceLinks } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Frequently Asked Questions" };
 
@@ -34,9 +34,9 @@ export default function FAQPage() {
               {
                 question: "How do I book a consultation?",
                 answer:
-                  "The contact page will be the starting point for consultation requests. Scheduling details are still being added; online booking is not connected yet.",
-                href: "/contact#consultation",
-                linkLabel: "Consultation details",
+                  "Use our Sessions Health request form to request a consultation. If you’re already a client, use the Client Portal link in the navigation or footer to sign in.",
+                href: practiceLinks.consultation,
+                linkLabel: "Request a consultation",
               },
             ]}
           />

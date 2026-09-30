@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CTAButton, TextLink } from "@/components/ui";
 import { TherapistPortrait } from "@/components/therapist-portrait";
-import { therapists } from "@/lib/content";
+import { practiceLinks, therapists } from "@/lib/content";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -56,7 +56,7 @@ export default async function TherapistProfile({
             before scheduling.
           </p>
           <div className="button-group">
-            <CTAButton href="/contact#consultation">
+            <CTAButton href={practiceLinks.consultation}>
               Book a Consultation
             </CTAButton>
             <TextLink href="/insurance-rates">Insurance & Rates</TextLink>

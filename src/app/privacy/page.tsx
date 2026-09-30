@@ -19,8 +19,7 @@ export default function PrivacyPage() {
           <h2>Policy to be added.</h2>
           <p>
             The practice’s approved website privacy policy and any relevant
-            notices will be published here before inquiry forms or online
-            booking are enabled.
+            notices will be published here.
           </p>
           <p className="placeholder-note">
             This placeholder is not a privacy policy or a notice of privacy

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigation } from "@/lib/content";
+import { navigation, practiceLinks } from "@/lib/content";
 
 export function Wordmark() {
   return (
@@ -24,6 +24,11 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
     <Link
       key={href}
       href={href}
+      className={
+        href === practiceLinks.clientPortal
+          ? "button button--secondary client-portal-link"
+          : undefined
+      }
       onClick={onNavigate}
       aria-current={pathname === href ? "page" : undefined}
       data-active={
@@ -109,6 +114,15 @@ export function MobileNav() {
           <br />
           Online in Texas & Colorado
         </p>
+        <div className="button-group">
+          <a
+            className="button button--primary"
+            href={practiceLinks.consultation}
+            onClick={() => setOpen(false)}
+          >
+            Book a Consultation<span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </nav>
     </div>
   );
@@ -123,9 +137,9 @@ export function Header() {
         <nav className="desktop-navigation" aria-label="Main navigation">
           <NavLinks />
         </nav>
-        <Link className="header-cta" href="/contact#consultation">
+        <a className="header-cta" href={practiceLinks.consultation}>
           Book a Consultation<span aria-hidden="true">↗</span>
-        </Link>
+        </a>
         <MobileNav key={pathname} />
       </div>
     </header>

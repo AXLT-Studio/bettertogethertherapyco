@@ -1,3 +1,4 @@
+import { practiceLinks } from "@/lib/content";
 import { CTAButton } from "./ui";
 
 export function ClosingCTA() {
@@ -16,8 +17,10 @@ export function ClosingCTA() {
           </p>
         </div>
         <div className="button-group">
-          <CTAButton href="/therapists">Find Your Therapist</CTAButton>
-          <CTAButton href="/contact#consultation" variant="secondary">
+          <CTAButton href="/therapists" variant="secondary">
+            Find Your Therapist
+          </CTAButton>
+          <CTAButton href={practiceLinks.consultation}>
             Book a Consultation
           </CTAButton>
         </div>

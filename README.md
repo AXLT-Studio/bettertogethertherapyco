@@ -48,7 +48,7 @@ The service and therapist detail pages use `[slug]` routes with `generateStaticP
 - `/contact`
 - `/privacy` — additional placeholder so the footer privacy link has a destination.
 
-Audience links go to the matching sections on `/services`. Consultation CTAs go to `/contact#consultation`. FAQs use native `details`/`summary`; mobile navigation supports keyboard use, Escape, outside clicks, and closing when navigating.
+Audience links go to the matching sections on `/services`. Consultation CTAs open the [Sessions Health request form](https://bettertogethertherapy.sessionshealth.com/request) in the same tab. The desktop/mobile navigation and footer include a lower-emphasis [Client Portal](https://bettertogethertherapy.sessionshealth.com/clients/sign_in) link. Both destinations are defined in `practiceLinks` in `src/lib/content.ts`. FAQs use native `details`/`summary`; mobile navigation supports keyboard use, Escape, outside clicks, and closing when navigating.
 
 ## Content still to confirm
 
@@ -58,6 +58,5 @@ This is a structural draft, not a launch-ready practice website. Samantha's and 
 - Add session fees, lengths, appointment availability, and in-person/virtual eligibility details.
 - Confirm therapist biographies and specialties. Samantha's supplied LPC credential and education background are included; Shelly's credentials are not assumed.
 - Supply office address, phone, email, social destinations, and an approved privacy policy.
-- Connect the consultation scheduling destination. The contact page currently explains the intended flow; it has no submission form, backend, or appointment collection.
 
-Replace these placeholders before publishing. No analytics or external booking integration has been added.
+Replace these placeholders before publishing. Consultation requests and client sign-in are handled on Sessions Health via external links; this site has no local submission form or appointment collection backend. No analytics has been added.

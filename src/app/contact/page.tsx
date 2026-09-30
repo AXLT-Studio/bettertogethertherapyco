@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { practiceLinks } from "@/lib/content";
 import {
   CTAButton,
   PageIntro,
@@ -58,16 +59,17 @@ export default function ContactPage() {
           </div>
           <aside className="info-panel">
             <p className="eyebrow">Consultation booking</p>
-            <h2>Scheduling details coming soon.</h2>
+            <h2>Request a consultation.</h2>
             <p>
-              Online booking is not available in this initial website outline.
-              Confirmed phone, email, and consultation scheduling details will
-              appear here.
+              Use our Sessions Health request form to tell us what you’re
+              looking for and take the next step.
             </p>
-            <p className="placeholder-note">
-              No appointment requests are being collected through this page.
-            </p>
-            <TextLink href="/faq">Read the FAQs</TextLink>
+            <div className="button-group">
+              <CTAButton href={practiceLinks.consultation}>
+                Book a Consultation
+              </CTAButton>
+              <TextLink href="/faq">Read the FAQs</TextLink>
+            </div>
           </aside>
         </div>
       </section>
