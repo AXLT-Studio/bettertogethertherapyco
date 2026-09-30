@@ -21,9 +21,14 @@ export default function ServicesPage() {
             title="There’s room to talk about it."
             description="Start with what feels most relevant. You don’t need to choose a category before you reach out."
           />
-          <div className="service-list">
+          <div className="service-list services-index-list">
             {services.map((service, index) => (
-              <ServiceCard service={service} index={index} key={service.slug} />
+              <ServiceCard
+                service={service}
+                index={index}
+                key={service.slug}
+                variant="editorial"
+              />
             ))}
           </div>
         </div>
