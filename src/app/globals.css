@@ -949,6 +949,17 @@
     font-size: 0.94rem;
     color: var(--muted);
   }
+  .contact-details address {
+    margin-top: 0.45rem;
+    color: var(--foreground);
+    font-style: normal;
+    line-height: 1.55;
+  }
+  .contact-details a:hover,
+  .footer-contact a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
   /* Footer */
   .site-footer {
@@ -984,6 +995,16 @@
   }
   .footer-contact p + p {
     margin-top: 0.6rem;
+  }
+  .footer-office {
+    margin-block: 1rem;
+  }
+  .footer-office address {
+    margin-top: 0.2rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-style: normal;
+    line-height: 1.55;
   }
   .footer-bottom {
     display: flex;

@@ -7,7 +7,11 @@ import {
   TextLink,
 } from "@/components/ui";
 
-export const metadata: Metadata = { title: "Contact & Consultations" };
+export const metadata: Metadata = {
+  title: "Contact & Consultations",
+  description:
+    "Contact Better Together Therapy for in-person therapy in the Greater Austin Area at 1640 Highland Falls, Suite 802, Leander, TX 78641, or online therapy throughout Texas and Colorado.",
+};
 
 export default function ContactPage() {
   return (
@@ -78,24 +82,37 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="Our location"
             title="Rooted in the Greater Austin Area. Connected across two states."
-            description="In-person therapy in the Greater Austin Area, and online therapy for clients throughout Texas and Colorado."
+            description="In-person therapy in the Greater Austin Area, with online therapy throughout Texas and Colorado."
           />
           <dl className="contact-details">
             <div>
-              <dt>Office</dt>
-              <dd>Leander, Texas · Street address to be added</dd>
+              <dt>Location</dt>
+              <dd>
+                In-person therapy in the Greater Austin Area
+                <address>
+                  1640 Highland Falls, Suite 802
+                  <br />
+                  Leander, TX 78641
+                </address>
+              </dd>
             </div>
             <div>
-              <dt>Online therapy</dt>
-              <dd>Available in Texas and Colorado</dd>
+              <dt>Online</dt>
+              <dd>Online therapy throughout Texas &amp; Colorado</dd>
             </div>
             <div>
               <dt>Phone</dt>
-              <dd>To be added</dd>
+              <dd>
+                <a href="tel:+15125980312">(512) 598-0312</a>
+              </dd>
             </div>
             <div>
               <dt>Email</dt>
-              <dd>To be added</dd>
+              <dd>
+                <a href="mailto:info@bettertogethertherapy.co">
+                  info@bettertogethertherapy.co
+                </a>
+              </dd>
             </div>
             <div>
               <dt>Hours</dt>

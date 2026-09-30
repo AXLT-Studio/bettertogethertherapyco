@@ -41,9 +41,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
       }
     >
       {label}
-      {href === practiceLinks.clientPortal && (
-        <span aria-hidden="true">↗</span>
-      )}
+      {href === practiceLinks.clientPortal}
     </Link>
   ));
 }

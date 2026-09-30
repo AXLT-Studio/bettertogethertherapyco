@@ -67,22 +67,15 @@ export default function InsurancePage() {
           </div>
           <aside className="info-panel">
             <p className="eyebrow">Before your appointment</p>
-            <h2>Details to confirm</h2>
+            <h2>A few things to confirm</h2>
             <ul className="detail-list">
-              <li>Whether your therapist participates in your specific plan</li>
-              <li>Your copay, deductible, or coinsurance</li>
-              <li>
-                Whether your deductible must be met before coverage begins
-              </li>
-              <li>Coverage for your appointment type</li>
-              <li>
-                Whether telehealth and in-person sessions are covered
-                differently
-              </li>
+              <li>Your expected out-of-pocket cost</li>
+              <li>Any referral or prior authorization requirements</li>
+              <li>Coverage for in-person or telehealth sessions</li>
             </ul>
             <p className="small-copy">
-              Benefits and eligibility are determined by your insurance plan and
-              should be confirmed before your first appointment.
+              Benefits vary by plan. We recommend confirming coverage directly
+              with your insurance provider before your first appointment.
             </p>
           </aside>
         </div>
