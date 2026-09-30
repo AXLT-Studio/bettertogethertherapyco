@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Service, Therapist } from "@/lib/content";
 import { CTAButton, TextLink } from "./ui";
 import { TherapistPortrait } from "./therapist-portrait";
@@ -59,10 +60,35 @@ export function AudienceCard({
 export function ServiceCard({
   service,
   index,
+  variant = "default",
 }: {
   service: Service;
   index: number;
+  variant?: "default" | "editorial";
 }) {
+  if (variant === "editorial") {
+    return (
+      <article className="service-index-item">
+        <Link
+          className="service-index-row"
+          href={`/services/${service.slug}`}
+          aria-label={`Explore ${service.title.toLowerCase()}`}
+        >
+          <span className="service-index-number" aria-hidden="true">
+            0{index + 1}
+          </span>
+          <span className="service-index-copy">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </span>
+          <span className="service-index-arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
+      </article>
+    );
+  }
+
   return (
     <article className="service-card">
       <span className="card-index" aria-hidden="true">

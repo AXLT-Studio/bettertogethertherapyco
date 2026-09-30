@@ -98,20 +98,36 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="section" aria-labelledby="services-title">
-        <div className="site-container split-section">
-          <div>
+      <section
+        className="section services-index-section"
+        aria-labelledby="services-title"
+      >
+        <div className="site-container services-index-layout">
+          <div className="services-index-intro">
             <SectionHeading
               eyebrow="How we can help"
-              title="Support for what’s on your mind."
-              description="A place to understand what’s happening and explore a way forward, together."
+              title={
+                <>
+                  Support for what’s
+                  <br />
+                  on your mind.
+                </>
+              }
+              description="Support that starts with understanding what’s beneath the surface."
               id="services-title"
             />
-            <TextLink href="/services">Explore All Services</TextLink>
+            <TextLink href="/services" arrow={false}>
+              Explore all services
+            </TextLink>
           </div>
-          <div className="service-list">
+          <div className="service-list services-index-list">
             {services.map((service, index) => (
-              <ServiceCard key={service.slug} service={service} index={index} />
+              <ServiceCard
+                key={service.slug}
+                service={service}
+                index={index}
+                variant="editorial"
+              />
             ))}
           </div>
         </div>

@@ -702,6 +702,77 @@
     font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
     line-height: 1.55;
   }
+  .services-index-layout {
+    display: grid;
+    gap: 3rem;
+    max-width: 72.5rem;
+  }
+  .services-index-intro .section-heading {
+    max-width: 26rem;
+    margin-bottom: 1.4rem;
+  }
+  .services-index-intro .section-description {
+    max-width: 25rem;
+    line-height: 1.65;
+  }
+  .services-index-intro > .text-link {
+    min-height: 36px;
+  }
+  .services-index-intro > .text-link .text-link-label::after {
+    transform: scaleX(1);
+    opacity: 0.55;
+  }
+  .services-index-list {
+    border-top: 1px solid var(--line);
+  }
+  .service-index-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .service-index-row {
+    display: grid;
+    grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem 1.75rem 1.5rem 0.5rem;
+    border-radius: 5px;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+  .service-index-number {
+    align-self: center;
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+  }
+  .service-index-copy {
+    min-width: 0;
+  }
+  .service-index-copy h3 {
+    font-size: clamp(1.45rem, 5.5vw, 1.9rem);
+  }
+  .service-index-copy p {
+    margin-top: 0.35rem;
+    font-size: clamp(0.875rem, 2.8vw, 0.95rem);
+    line-height: 1.55;
+  }
+  .service-index-arrow {
+    color: rgba(48, 54, 47, 0.55);
+    font-size: 1.15rem;
+    transition:
+      color 200ms ease,
+      transform 200ms ease;
+  }
+  .service-index-row:hover,
+  .service-index-row:focus-visible {
+    background: rgba(127, 148, 131, 0.07);
+  }
+  .service-index-row:hover .service-index-arrow,
+  .service-index-row:focus-visible .service-index-arrow {
+    color: var(--foreground);
+    transform: translateX(4px);
+  }
   .split-section {
     display: grid;
     gap: 2rem;
@@ -1343,6 +1414,22 @@
     }
     .brand-statement-support {
       grid-column: 2;
+    }
+    .services-index-layout {
+      grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
+    }
+    .services-index-intro {
+      align-self: center;
+    }
+    .service-index-row {
+      grid-template-columns: 1.75rem minmax(0, 1fr) auto;
+      gap: 1.25rem;
+      padding: 1.85rem 2.25rem 1.85rem 0.75rem;
+    }
+    .service-index-copy h3 {
+      font-size: clamp(1.75rem, 2.25vw, 2.125rem);
     }
     .split-section {
       grid-template-columns: 0.8fr 1.2fr;
