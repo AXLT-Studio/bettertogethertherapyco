@@ -19,6 +19,7 @@ export function AudienceCard({
       <TextLink
         href={`/services#${audience.id}`}
         label={`Learn more about therapy for ${audience.title.toLowerCase()}`}
+        arrow={false}
       >
         Learn more
       </TextLink>

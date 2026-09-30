@@ -10,10 +10,12 @@ export function CTAButton({
   href,
   children,
   variant = "primary",
+  arrow = true,
 }: {
   href: string;
   children: ReactNode;
   variant?: "primary" | "secondary";
+  arrow?: boolean;
 }) {
   const linkAttributes = getPracticeLinkAttributes(href);
   return (
@@ -23,7 +25,7 @@ export function CTAButton({
       {...linkAttributes}
     >
       {children}
-      <Arrow />
+      {arrow && <Arrow />}
     </Link>
   );
 }
@@ -32,10 +34,12 @@ export function TextLink({
   href,
   children,
   label,
+  arrow,
 }: {
   href: string;
   children: ReactNode;
   label?: string;
+  arrow?: boolean;
 }) {
   const linkAttributes = getPracticeLinkAttributes(href);
   return (
@@ -46,7 +50,7 @@ export function TextLink({
       {...linkAttributes}
     >
       <span className="text-link-label">{children}</span>
-      <Arrow />
+      {arrow !== false && <Arrow />}
     </Link>
   );
 }

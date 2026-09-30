@@ -44,9 +44,9 @@ export function Footer() {
             <p>Greater Austin Area</p>
             <p className="small-copy">Online in Texas & Colorado</p>
             <p className="small-copy">
-              Phone · To be added
+              Phone · (512) 598-0312
               <br />
-              Email · To be added
+              Email · info@bettertogethertherapy.co
             </p>
             <p className="small-copy">Social links · Coming soon</p>
           </div>

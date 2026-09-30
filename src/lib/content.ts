@@ -181,7 +181,7 @@ export const samanthaSerbin: Therapist = {
   slug: "samantha-serbin",
   name: "Samantha Serbin",
   credentials: "LPC",
-  role: "Founder",
+  role: "Founder · Therapist",
   professionalTitle: "Licensed Professional Counselor",
   initials: "SS",
   portrait: {

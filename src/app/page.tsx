@@ -120,12 +120,13 @@ export default function Home() {
               <h3>
                 {samanthaSerbin.name}, {samanthaSerbin.credentials}
               </h3>
-              <p>{samanthaSerbin.role}, Better Together Therapy</p>
+              <p>Founder, Better Together Therapy</p>
             </div>
             <div className="button-group">
               <CTAButton
                 href={`/therapists/${samanthaSerbin.slug}`}
                 variant="secondary"
+                arrow={false}
               >
                 Meet Samantha
               </CTAButton>
