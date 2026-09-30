@@ -78,6 +78,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section
+        className="brand-statement-section"
+        aria-labelledby="brand-statement-title"
+      >
+        <div className="site-container brand-statement-inner">
+          <h2 id="brand-statement-title">
+            Care should feel
+            <br />
+            <em>personal.</em>
+          </h2>
+          <div className="brand-statement-support">
+            <span aria-hidden="true" />
+            <p>
+              Different people need different kinds of support.
+              <br />
+              We start by understanding yours.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="section" aria-labelledby="services-title">
         <div className="site-container split-section">
           <div>
