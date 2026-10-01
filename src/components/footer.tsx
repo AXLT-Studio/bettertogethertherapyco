@@ -43,9 +43,16 @@ export function Footer() {
               <div className="footer-contact-group">
                 <p className="footer-contact-label">In person</p>
                 <address>
-                  1640 Highland Falls, Suite 802
-                  <br />
-                  Leander, TX 78641
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=1640%20Highland%20Falls%2C%20Suite%20802%2C%20Leander%2C%20TX%2078641"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View our location on Google Maps"
+                  >
+                    1640 Highland Falls, Suite 802
+                    <br />
+                    Leander, TX 78641
+                  </a>
                 </address>
               </div>
               <div className="footer-contact-group">
