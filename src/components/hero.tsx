@@ -1,4 +1,6 @@
-import { CTAButton, ImagePlaceholder } from "./ui";
+import Image from "next/image";
+import therapyRoomHero from "../../public/images/therapy-room-hero.png";
+import { CTAButton } from "./ui";
 
 export function Hero() {
   return (
@@ -28,14 +30,13 @@ export function Hero() {
         </p>
       </div>
       <div className="hero-visual">
-        <ImagePlaceholder
-          label="Practice & community photography"
-          variant="hero"
+        <Image
+          className="hero-artwork"
+          src={therapyRoomHero}
+          alt="Warm and welcoming Better Together Therapy office"
+          sizes="(min-width: 768px) min(50vw, 740px), (min-width: 576px) 560px, calc(100vw - 16px)"
+          preload
         />
-        <p className="image-caption">
-          <span>A little support can change the everyday.</span>
-          <span aria-hidden="true">01 / Together</span>
-        </p>
       </div>
     </section>
   );
