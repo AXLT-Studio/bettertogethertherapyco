@@ -86,21 +86,6 @@ export default function ContactPage() {
           />
           <dl className="contact-details">
             <div>
-              <dt>Location</dt>
-              <dd>
-                In-person therapy in the Greater Austin Area
-                <address>
-                  1640 Highland Falls, Suite 802
-                  <br />
-                  Leander, TX 78641
-                </address>
-              </dd>
-            </div>
-            <div>
-              <dt>Online</dt>
-              <dd>Online therapy throughout Texas &amp; Colorado</dd>
-            </div>
-            <div>
               <dt>Phone</dt>
               <dd>
                 <a href="tel:+15125980312">(512) 598-0312</a>
@@ -116,7 +101,7 @@ export default function ContactPage() {
             </div>
             <div>
               <dt>Hours</dt>
-              <dd>Appointment hours to be confirmed</dd>
+              <dd>By appointment</dd>
             </div>
           </dl>
         </div>
