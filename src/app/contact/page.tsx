@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { practiceLinks } from "@/lib/content";
+import { OfficeMap } from "@/components/office-map";
 import {
   CTAButton,
   PageIntro,
@@ -106,6 +107,7 @@ export default function ContactPage() {
           </dl>
         </div>
       </section>
+      <OfficeMap />
     </>
   );
 }

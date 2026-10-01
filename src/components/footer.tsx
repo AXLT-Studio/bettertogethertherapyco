@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { mapLinkAttributes, officeLocation } from "@/lib/location";
 import {
   getPracticeLinkAttributes,
   navigation,
@@ -44,9 +45,8 @@ export function Footer() {
                 <p className="footer-contact-label">In person</p>
                 <address>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=1640%20Highland%20Falls%2C%20Suite%20802%2C%20Leander%2C%20TX%2078641"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={officeLocation.mapUrl}
+                    {...mapLinkAttributes}
                     aria-label="View our location on Google Maps"
                   >
                     1640 Highland Falls, Suite 802
