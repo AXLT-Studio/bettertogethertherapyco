@@ -100,7 +100,11 @@ export type Service = {
   title: string;
   description: string;
   introduction: string;
-  topics: string[];
+  topics: {
+    title: string;
+    description: string;
+    expandedDescription: string;
+  }[];
 };
 
 export const services: Service[] = [
@@ -111,9 +115,27 @@ export const services: Service[] = [
     introduction:
       "When the what-ifs follow you into school, work, or the quiet moments at home, it can be hard to switch off. Start with a conversation about what you’ve been experiencing.",
     topics: [
-      "Everyday worry and overwhelm",
-      "School, work, and social pressures",
-      "How worry shows up at home",
+      {
+        title: "Everyday worry & overwhelm",
+        description:
+          "Learning to understand patterns of worry and the stress response.",
+        expandedDescription:
+          "We can explore the thoughts, situations, and patterns that keep worry going, and find practical ways to feel more grounded in everyday life.",
+      },
+      {
+        title: "Social anxiety & avoidance",
+        description:
+          "Working through fears of judgment, difficult situations, or experiences you’ve started avoiding.",
+        expandedDescription:
+          "Therapy can help you understand what makes social situations feel difficult, build confidence, and practice new ways of responding without letting fear make the decisions for you.",
+      },
+      {
+        title: "Panic & physical symptoms",
+        description:
+          "Understanding the connection between anxious thoughts, physical sensations, and the nervous system.",
+        expandedDescription:
+          "We can make sense of what happens in your body when anxiety rises and develop tools to respond with more awareness and a greater sense of control.",
+      },
     ],
   },
   {
@@ -123,9 +145,27 @@ export const services: Service[] = [
     introduction:
       "You may feel disconnected, worn down, or less like yourself. You don’t need to have the right words before reaching out.",
     topics: [
-      "Feeling low or disconnected",
-      "Changes in motivation and routines",
-      "Making room for support",
+      {
+        title: "Low mood & loss of interest",
+        description:
+          "Making sense of persistent sadness, disconnection, or losing interest in things that once mattered.",
+        expandedDescription:
+          "We can explore what may be contributing to feeling disconnected or stuck, while creating practical ways to reconnect with the parts of life that matter to you.",
+      },
+      {
+        title: "Energy, sleep & concentration",
+        description:
+          "Working through the ways depression can affect daily routines, motivation, and focus.",
+        expandedDescription:
+          "Therapy can help you understand how depression is affecting your everyday functioning and develop manageable strategies for rebuilding routines, motivation, and focus.",
+      },
+      {
+        title: "Self-worth & difficult thoughts",
+        description:
+          "Exploring guilt, hopelessness, negative thinking, and the beliefs that can keep you feeling stuck.",
+        expandedDescription:
+          "We can work together to notice patterns of self-criticism and difficult thinking, and develop a more balanced and compassionate way of relating to yourself.",
+      },
     ],
   },
   {
@@ -135,9 +175,27 @@ export const services: Service[] = [
     introduction:
       "Growing up comes with changes that can be difficult to explain. We make room for children, teens, and parents to share what’s happening from their own perspective.",
     topics: [
-      "Big feelings and growing independence",
-      "School and friendship challenges",
-      "Working together with parents",
+      {
+        title: "Emotions & self-understanding",
+        description:
+          "Helping young people recognize, express, and work through difficult feelings.",
+        expandedDescription:
+          "Therapy gives children and teens a supportive space to put words to what they are experiencing, understand their emotions, and build practical coping skills.",
+      },
+      {
+        title: "School, friendships & social skills",
+        description:
+          "Support with academic pressure, peer relationships, communication, and navigating social challenges.",
+        expandedDescription:
+          "We can work on communication, confidence, problem-solving, and the social or academic challenges that can make growing up feel overwhelming.",
+      },
+      {
+        title: "Anxiety, depression & difficult experiences",
+        description:
+          "Creating space to work through anxiety, low mood, trauma, grief, and other challenges.",
+        expandedDescription:
+          "Care can be tailored to the child or teen and may include support around anxiety, depression, grief, difficult experiences, or changes at home and school.",
+      },
     ],
   },
   {
@@ -147,9 +205,27 @@ export const services: Service[] = [
     introduction:
       "When the same disagreements keep coming up, it can feel like you’re talking past each other. Therapy offers a place to consider what each person needs.",
     topics: [
-      "Communication and recurring conflict",
-      "Parenting and changing family roles",
-      "Navigating change as a family",
+      {
+        title: "Communication & recurring conflict",
+        description:
+          "Learning to listen, express needs, and move away from patterns that escalate conflict.",
+        expandedDescription:
+          "Family therapy can help everyone better understand the patterns behind recurring conflict and practice new ways of communicating and responding.",
+      },
+      {
+        title: "Parent–child relationships & boundaries",
+        description:
+          "Understanding each other’s needs while creating healthier boundaries and expectations.",
+        expandedDescription:
+          "We can create space for different perspectives while working toward clearer expectations, healthier boundaries, and stronger relationships between family members.",
+      },
+      {
+        title: "Family change & transitions",
+        description:
+          "Support through divorce, blended families, moving, grief, or other changes that affect the whole family.",
+        expandedDescription:
+          "Major changes can affect everyone differently. Therapy can help families process those changes together while finding ways to stay connected.",
+      },
     ],
   },
   {
@@ -159,9 +235,27 @@ export const services: Service[] = [
     introduction:
       "Even a change you wanted can bring unfamiliar feelings. There’s room to talk about what you’re leaving behind and what comes next.",
     topics: [
-      "New schools, jobs, or stages of life",
-      "Changes in relationships and roles",
-      "Uncertainty about what comes next",
+      {
+        title: "Work, school & major life changes",
+        description:
+          "Navigating a new job, career change, retirement, college, or a move to a new place.",
+        expandedDescription:
+          "Transitions can bring excitement and uncertainty at the same time. Therapy provides space to process the change and figure out what you need in this next chapter.",
+      },
+      {
+        title: "Relationships & family changes",
+        description:
+          "Support through marriage, separation, divorce, parenthood, blended families, or changing roles.",
+        expandedDescription:
+          "When relationships or family roles change, it can take time to adjust. We can work through the emotions and practical challenges while making space for what comes next.",
+      },
+      {
+        title: "Grief, identity & uncertainty",
+        description:
+          "Making space for loss, shifting identities, and the emotions that come with entering a new chapter.",
+        expandedDescription:
+          "Therapy can provide a place to process loss, uncertainty, or changes in how you see yourself, while gradually finding a clearer sense of direction.",
+      },
     ],
   },
 ];

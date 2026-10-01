@@ -40,9 +40,7 @@ export default async function ServicePage({
           <div className="content-block">
             <h2>A place to begin.</h2>
             <p>{service.introduction}</p>
-            <ServiceTopicAccordion
-              items={service.topics.map((title) => ({ title }))}
-            />
+            <ServiceTopicAccordion items={service.topics} />
             <p className="placeholder-note">
               More about our approach, session options, and therapists who offer
               this service will be added here.
