@@ -3,6 +3,8 @@ const encodedAddress = encodeURIComponent(address);
 
 export const officeLocation = {
   address,
+  longitude: -97.8112136,
+  latitude: 30.5678292,
   mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`,
   directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`,
 } as const;

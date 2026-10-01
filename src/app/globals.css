@@ -1,4 +1,6 @@
+@layer theme, map, base, components, utilities;
 @import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css" layer(map);
 
 /* Temporary brand tokens. Keep future palette and typography changes here. */
 :root {
@@ -1278,6 +1280,58 @@
     position: absolute;
     inset: 0;
     background: url("/maps/leander-office.svg?v=regional-wide") center / cover no-repeat;
+  }
+  .office-map-live,
+  .office-map-fallback {
+    position: absolute;
+    inset: 0;
+  }
+  .office-map-live {
+    opacity: 0;
+  }
+  .office-map[data-interactive="true"] .office-map-live {
+    opacity: 1;
+  }
+  .office-map-live .maplibregl-ctrl-group {
+    border: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--background);
+  }
+  .office-map-live .maplibregl-ctrl-group button {
+    width: 36px;
+    height: 36px;
+  }
+  .office-map-live .maplibregl-ctrl-group button + button {
+    border-top-color: var(--line);
+  }
+  .office-map-live .maplibregl-ctrl-group button:hover {
+    background: var(--sage);
+  }
+  .office-map-live .maplibregl-canvas:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -3px;
+  }
+  .office-map-live .maplibregl-ctrl-attrib {
+    color: var(--muted);
+    background: var(--background);
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+  }
+  .office-map-pin {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+  }
+  .office-map-pin > svg {
+    align-self: end;
+    width: 28px;
+    height: 36px;
+    color: var(--accent);
+  }
+  .office-map-pin:hover > svg {
+    color: var(--foreground);
   }
   .office-map-marker {
     position: absolute;
