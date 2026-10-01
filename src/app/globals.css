@@ -1277,7 +1277,7 @@
   .office-map-streets {
     position: absolute;
     inset: 0;
-    background: url("/maps/leander-office.svg") center / cover no-repeat;
+    background: url("/maps/leander-office.svg?v=regional-wide") center / cover no-repeat;
   }
   .office-map-marker {
     position: absolute;
