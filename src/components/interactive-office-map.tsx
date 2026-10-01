@@ -14,19 +14,29 @@ export function InteractiveOfficeMap() {
     let disposed = false;
     let cleanup = () => {};
 
-    async function initialize() {
-      const { Map, Marker, NavigationControl, AttributionControl } = await import("maplibre-gl");
+    async function initialize(mapContainer: HTMLDivElement) {
+      const {
+        Map,
+        Marker,
+        NavigationControl,
+        AttributionControl,
+        setWorkerUrl,
+      } = await import("maplibre-gl");
       if (disposed) return;
+      setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
 
       const map = new Map({
-        container: container!,
+        container: mapContainer,
         style: "/maps/office-style.json",
         center: [officeLocation.longitude, officeLocation.latitude],
         // Keep the same regional extent at each responsive width.
-        zoom: Math.log2((container!.clientWidth * 360) / (512 * 0.6)),
+        zoom: Math.log2((mapContainer.clientWidth * 360) / (512 * 0.6)),
         minZoom: 8,
         maxZoom: 18,
-        maxBounds: [[-98.2, 30.2], [-97.3, 30.95]],
+        maxBounds: [
+          [-98.2, 30.2],
+          [-97.3, 30.95],
+        ],
         attributionControl: false,
         cooperativeGestures: true,
         dragRotate: false,
@@ -37,33 +47,46 @@ export function InteractiveOfficeMap() {
       cleanup = () => map.remove();
       map.touchZoomRotate.disableRotation();
       map.keyboard.disableRotation();
-      map.addControl(new NavigationControl({ showCompass: false }), "top-right");
-      map.addControl(new AttributionControl({ compact: true }), "bottom-right");
+      map.addControl(
+        new NavigationControl({ showCompass: false }),
+        "top-right",
+      );
+      map.addControl(
+        new AttributionControl({ compact: true }),
+        "bottom-right",
+      );
 
       const canvas = map.getCanvas();
-      canvas.setAttribute("aria-label", `Interactive map of ${officeLocation.address}. Use arrow keys to move and plus or minus to zoom.`);
+      canvas.setAttribute(
+        "aria-label",
+        `Interactive map of ${officeLocation.address}. Use arrow keys to move and plus or minus to zoom.`,
+      );
 
       const marker = document.createElement("a");
       marker.className = "office-map-pin";
       marker.href = officeLocation.directionsUrl;
       marker.target = mapLinkAttributes.target;
       marker.rel = mapLinkAttributes.rel;
-      marker.setAttribute("aria-label", `Get directions to ${officeLocation.address}`);
+      marker.setAttribute(
+        "aria-label",
+        `Get directions to ${officeLocation.address}`,
+      );
       marker.innerHTML = '<svg viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1C5.9 1 1 5.9 1 12c0 8 11 19 11 19s11-11 11-19C23 5.9 18.1 1 12 1Z" fill="currentColor"/><circle cx="12" cy="12" r="4" fill="var(--background)"/></svg>';
       new Marker({ element: marker, anchor: "bottom" })
         .setLngLat([officeLocation.longitude, officeLocation.latitude])
         .addTo(map);
 
       // Retain the local map until the live tiles and labels have loaded.
+      let failedToLoad = false;
       map.once("load", () => {
-        if (!disposed) setReady(true);
+        if (!disposed && !failedToLoad) setReady(true);
       });
       map.on("error", () => {
-        // The local preview remains available if the initial map cannot load.
+        failedToLoad = true;
       });
     }
 
-    initialize().catch(() => {
+    initialize(container).catch(() => {
       cleanup();
       cleanup = () => {};
     });
@@ -96,11 +119,18 @@ export function InteractiveOfficeMap() {
             {...mapLinkAttributes}
           >
             <svg viewBox="0 0 24 32" aria-hidden="true">
-              <path d="M12 1C5.9 1 1 5.9 1 12c0 8 11 19 11 19s11-11 11-19C23 5.9 18.1 1 12 1Z" fill="currentColor" />
+              <path
+                d="M12 1C5.9 1 1 5.9 1 12c0 8 11 19 11 19s11-11 11-19C23 5.9 18.1 1 12 1Z"
+                fill="currentColor"
+              />
               <circle cx="12" cy="12" r="4" fill="var(--background)" />
             </svg>
           </a>
-          <a className="office-map-attribution" href="https://www.openstreetmap.org/copyright" {...mapLinkAttributes}>
+          <a
+            className="office-map-attribution"
+            href="https://www.openstreetmap.org/copyright"
+            {...mapLinkAttributes}
+          >
             © OpenStreetMap contributors
           </a>
         </div>

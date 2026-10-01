@@ -2666,10 +2666,43 @@
           16
         ],
         "text-allow-overlap": true,
-        "text-anchor": "bottom",
+        "text-anchor": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "name"
+            ],
+            "Leander"
+          ],
+          "right",
+          "bottom"
+        ],
         "text-offset": [
-          0,
-          -0.5
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "name"
+            ],
+            "Leander"
+          ],
+          [
+            "literal",
+            [
+              -0.5,
+              0
+            ]
+          ],
+          [
+            "literal",
+            [
+              0,
+              -0.5
+            ]
+          ]
         ]
       },
       "paint": {
