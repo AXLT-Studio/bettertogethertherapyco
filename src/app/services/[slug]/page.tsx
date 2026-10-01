@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ClosingCTA } from "@/components/closing-cta";
+import { ServiceTopicAccordion } from "@/components/service-topic-accordion";
 import { CTAButton, PageIntro, TextLink } from "@/components/ui";
 import { services } from "@/lib/content";
 
@@ -39,11 +40,9 @@ export default async function ServicePage({
           <div className="content-block">
             <h2>A place to begin.</h2>
             <p>{service.introduction}</p>
-            <ul className="detail-list">
-              {service.topics.map((topic) => (
-                <li key={topic}>{topic}</li>
-              ))}
-            </ul>
+            <ServiceTopicAccordion
+              items={service.topics.map((title) => ({ title }))}
+            />
             <p className="placeholder-note">
               More about our approach, session options, and therapists who offer
               this service will be added here.
