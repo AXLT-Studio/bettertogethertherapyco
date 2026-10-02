@@ -1422,6 +1422,9 @@
     align-items: center;
   }
   .footer-navigation-links > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     padding-block: 0.55rem;
   }
   .footer-navigation-links > a:hover,
