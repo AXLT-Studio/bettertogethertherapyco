@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ClosingCTA } from "@/components/closing-cta";
 import { TherapistPortrait } from "@/components/therapist-portrait";
-import { CTAButton, PageIntro, SectionHeading } from "@/components/ui";
+import { Arrow, CTAButton, PageIntro, SectionHeading } from "@/components/ui";
 import { samanthaSerbin, values } from "@/lib/content";
 import styles from "./story.module.css";
 
@@ -10,17 +10,48 @@ export const metadata: Metadata = { title: "About Our Practice" };
 const storyItems = [
   {
     title: "Rooted in education",
-    body: "As a former teacher, Samantha experienced firsthand the need for mental health support within schools and for young people moving into adulthood.",
+    body: (
+      <>
+        As a former teacher, Samantha experienced firsthand the need for{" "}
+        <strong>mental health support within schools</strong> and for young
+        people moving into adulthood.
+      </>
+    ),
     icon: "book",
   },
   {
     title: "Training & transition",
-    body: "Raised in Arizona, she studied Secondary Education at Arizona State University before later earning a master’s in Clinical Psychology from Pepperdine University, with an emphasis in Marriage and Family Therapy.",
+    body: (
+      <>
+        Raised in Arizona, she studied{" "}
+        <strong>Secondary Education at Arizona State University</strong> before
+        later earning a{" "}
+        <strong>
+          master’s in Clinical Psychology from Pepperdine University
+        </strong>
+        , with an emphasis in Marriage and Family Therapy.
+      </>
+    ),
     icon: "graduation",
   },
   {
     title: "Community-centered care",
-    body: "Now based in the Greater Austin area, Samantha is licensed in Texas and Colorado and continues to support underserved communities through her volunteer work with Capital Area Counseling.",
+    body: (
+      <>
+        Now based in the Greater Austin area, Samantha is{" "}
+        <strong>licensed in Texas and Colorado</strong> and continues to support
+        underserved communities through her volunteer work with{" "}
+        <a
+          className={styles.storyLink}
+          href="https://cacaustin.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Capital Area Counseling
+        </a>
+        .
+      </>
+    ),
     icon: "community",
   },
 ] as const;
@@ -97,6 +128,17 @@ export default function AboutPage() {
               </CTAButton>
               <CTAButton href="/therapists">Meet the Team</CTAButton>
             </div>
+            <a
+              className={`text-link ${styles.psychologyLink}`}
+              href="https://www.psychologytoday.com/us/therapists/samantha-serbin-cedar-park-tx/1211636"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="text-link-label">
+                View Samantha on Psychology Today
+              </span>
+              <Arrow />
+            </a>
           </div>
         </div>
       </section>
