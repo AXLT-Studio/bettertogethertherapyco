@@ -100,7 +100,7 @@ export default function AboutPage() {
       />
       <section className="section">
         <div className="site-container founder-grid">
-          <TherapistPortrait therapist={samanthaSerbin} />
+          <TherapistPortrait therapist={samanthaSerbin} loading="eager" />
           <div className="content-block">
             <SectionHeading
               eyebrow="Where we began"

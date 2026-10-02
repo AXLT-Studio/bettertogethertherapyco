@@ -6,10 +6,12 @@ export function TherapistPortrait({
   therapist,
   sizes = "(min-width: 1440px) 520px, (min-width: 900px) 40vw, 90vw",
   preload = false,
+  loading,
 }: {
   therapist: Therapist;
   sizes?: string;
   preload?: boolean;
+  loading?: "eager" | "lazy";
 }) {
   return (
     <div className="therapist-portrait">
@@ -20,6 +22,7 @@ export function TherapistPortrait({
           fill
           sizes={sizes}
           preload={preload}
+          loading={loading}
           style={{ objectPosition: therapist.portrait.position }}
         />
       ) : (
