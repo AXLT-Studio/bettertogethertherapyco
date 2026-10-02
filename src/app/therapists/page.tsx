@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TherapistCard } from "@/components/cards";
 import { ClosingCTA } from "@/components/closing-cta";
+import { RecruitmentCTA } from "@/components/recruitment-cta";
 import { PageIntro, TextLink } from "@/components/ui";
 import { practiceLinks, therapists } from "@/lib/content";
 
@@ -28,6 +29,7 @@ export default function TherapistsPage() {
         </div>
       </section>
       <ClosingCTA />
+      <RecruitmentCTA />
     </>
   );
 }
