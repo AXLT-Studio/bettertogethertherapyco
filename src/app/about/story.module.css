@@ -1,0 +1,156 @@
+.story {
+  padding-block: 4.5rem 5rem;
+  border-top: 1px solid var(--line);
+  background: var(--background);
+}
+
+.container {
+  width: min(calc(100% - max(var(--gutter), 1.5rem) * 2), 1280px);
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.header :global(.section-heading) {
+  margin-bottom: 0;
+}
+
+.header :global(.eyebrow) {
+  margin-bottom: 1.25rem;
+}
+
+.grid {
+  --story-gap: 2.75rem;
+  display: grid;
+  gap: var(--story-gap);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  column-gap: 1.5rem;
+  align-items: start;
+}
+
+.item + .item::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--story-gap) / -2);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--foreground);
+}
+
+.icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.copy {
+  max-width: 40rem;
+}
+
+.copy h3 {
+  font-size: 1.5rem;
+}
+
+.copy p {
+  margin-top: 1.25rem;
+  line-height: 1.7;
+}
+
+.quote {
+  max-width: 51.25rem;
+  margin: 4rem auto 0;
+  text-align: center;
+}
+
+.quote p {
+  color: var(--muted);
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 359px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .story {
+    padding-block: 6rem 6.5rem;
+  }
+
+  .header {
+    margin-bottom: 3.5rem;
+  }
+
+  .grid {
+    --story-gap: 3rem;
+  }
+
+  .item {
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+  }
+
+  .icon {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .story {
+    padding-block: clamp(7rem, 9vw, 8.5rem) clamp(7rem, 8vw, 8.125rem);
+  }
+
+  .header {
+    margin-bottom: 4.25rem;
+  }
+
+  .grid {
+    --story-gap: clamp(3.5rem, 5vw, 5rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .item + .item::before {
+    top: 0;
+    bottom: 0;
+    left: calc(var(--story-gap) / -2);
+    width: 1px;
+    height: auto;
+  }
+
+  .quote {
+    display: grid;
+    grid-template-columns: 6.25rem minmax(0, 51.25rem) 6.25rem;
+    align-items: center;
+    gap: 2rem;
+    max-width: 67.75rem;
+    margin-top: 5rem;
+  }
+
+  .quote::before,
+  .quote::after {
+    content: "";
+    height: 1px;
+    background: var(--line);
+  }
+}
