@@ -145,17 +145,30 @@ export default function LicensedTherapistPage() {
               <p className={styles.compensationLine}>Competitive 1099 contractor rate</p>
               <p>Compensation is discussed during the interview process and is based on experience, availability, and caseload fit.</p>
             </section>
-            <section className={`${styles.articleSection} ${styles.culture}`} aria-labelledby="role-culture-title">
-              <p className="eyebrow">WHY BETTER TOGETHER</p>
-              <h2 id="role-culture-title">A practice built with intention.</h2>
-              <p>We’re intentional about creating a practice where clinicians have room to work thoughtfully and grow in a way that feels sustainable.</p>
-              <p className={styles.supportingLine}>Clinical autonomy · Flexible scheduling · Office space · EHR support · Collaborative environment</p>
-              <p>We value authenticity, clinical thoughtfulness, and connection over hierarchy or volume.</p>
-            </section>
           </article>
         </div>
       </div>
 
+      <section className={styles.culture} aria-labelledby="role-culture-title">
+        <div className={`site-container ${styles.cultureGrid}`}>
+          <div>
+            <p className="eyebrow">WHY BETTER TOGETHER</p>
+            <h2 id="role-culture-title">Room to do meaningful work.</h2>
+          </div>
+          <div className={styles.cultureCopy}>
+            <p>We’re intentional about creating a practice where clinicians have room to work thoughtfully and grow in a way that feels sustainable.</p>
+            <ul className={styles.benefits}>
+              <li>Clinical autonomy</li>
+              <li>Flexible scheduling</li>
+              <li>Office space</li>
+              <li>EHR support</li>
+              <li>Collaborative environment</li>
+            </ul>
+            <p>We value authenticity, clinical thoughtfulness, and connection over hierarchy or volume.</p>
+            <ApplyButton />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

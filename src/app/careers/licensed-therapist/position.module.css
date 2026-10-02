@@ -133,24 +133,55 @@
   color: var(--foreground);
 }
 
-.articleSection.culture {
-  padding: 2.5rem;
-  background: color-mix(in srgb, var(--sage) 50%, var(--background));
-  border-bottom: 1px solid var(--line);
+.culture {
+  padding-block: 2.75rem;
+  border-top: 1px solid var(--line);
 }
 
-.culture > :global(.eyebrow) {
-  margin-bottom: 1.25rem;
+.cultureGrid {
+  display: grid;
+  gap: 2rem;
 }
 
-.culture .supportingLine {
-  font-size: 0.85rem;
+.cultureGrid > div {
+  min-width: 0;
 }
 
+.culture h2 {
+  max-width: 27rem;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+}
 
-@media (max-width: 599px) {
-  .articleSection.culture {
-    padding: 2rem 1.25rem;
+.cultureCopy {
+  display: grid;
+  justify-items: start;
+  gap: 1.5rem;
+}
+
+.benefits {
+  display: grid;
+  gap: 0.625rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 600px) {
+  .benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .culture {
+    padding-block: 5rem;
+  }
+
+  .cultureGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(3rem, 5vw, 5rem);
   }
 }
 
