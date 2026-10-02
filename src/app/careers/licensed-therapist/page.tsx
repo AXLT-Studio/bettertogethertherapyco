@@ -176,7 +176,6 @@ export default function LicensedTherapistPage() {
               <li>Collaborative environment</li>
             </ul>
             <p>We value authenticity, clinical thoughtfulness, and connection over hierarchy or volume.</p>
-            <ApplyButton />
           </div>
         </div>
       </section>
