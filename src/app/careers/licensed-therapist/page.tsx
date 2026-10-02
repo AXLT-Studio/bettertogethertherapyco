@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { CTAButton } from "@/components/ui";
+import { Arrow } from "@/components/ui";
 import careersStyles from "../careers.module.css";
 import styles from "./position.module.css";
 
@@ -11,10 +11,21 @@ export const metadata: Metadata = {
     "Join Better Together Therapy as a Licensed Therapist in Leander, TX · Greater Austin Area. LPC, LMFT, or LMSW; 1099 contractor, part-time or full-time.",
 };
 
-const applicationDestination = "/contact";
+const applicationDestination = "https://form.jotform.com/261324228708052";
 
 function ApplyButton() {
-  return <CTAButton href={applicationDestination} arrow>Apply for this role</CTAButton>;
+  return (
+    <a
+      href={applicationDestination}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="button button--primary"
+      aria-label="Apply for this role (opens in a new tab)"
+    >
+      Apply for this role
+      <Arrow />
+    </a>
+  );
 }
 
 type IconKind = "location" | "employment" | "schedule" | "availability" | "clients" | "hours" | "weekends";
