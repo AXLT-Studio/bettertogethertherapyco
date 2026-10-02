@@ -25,9 +25,9 @@ const storyItems = [
       <>
         Raised in Arizona, she studied{" "}
         <strong>Secondary Education at Arizona State University</strong> before
-        later earning a{" "}
+        earning a{" "}
         <strong>
-          master’s in Clinical Psychology from Pepperdine University
+          master’s degree in Clinical Psychology from Pepperdine University
         </strong>
         , with an emphasis in Marriage and Family Therapy.
       </>
