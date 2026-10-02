@@ -374,7 +374,6 @@
   }
   .footer-navigation .client-portal-link {
     justify-self: start;
-    margin-top: 1.75rem;
     padding-block: 0.55rem;
   }
   .mobile-navigation a[data-active],
@@ -1420,6 +1419,7 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 0.25rem 1.5rem;
     align-content: start;
+    align-items: center;
   }
   .footer-navigation-links > a {
     padding-block: 0.55rem;

@@ -31,14 +31,14 @@ export function Footer() {
                 ))}
               <Link href="/contact">Contact</Link>
               <Link href="/careers">Careers</Link>
+              <Link
+                href={practiceLinks.clientPortal}
+                {...getPracticeLinkAttributes(practiceLinks.clientPortal)}
+                className="button button--secondary client-portal-link"
+              >
+                Client Portal
+              </Link>
             </div>
-            <Link
-              href={practiceLinks.clientPortal}
-              {...getPracticeLinkAttributes(practiceLinks.clientPortal)}
-              className="button button--secondary client-portal-link"
-            >
-              Client Portal
-            </Link>
           </nav>
           <div className="footer-contact">
             <p className="eyebrow">Let’s connect</p>
