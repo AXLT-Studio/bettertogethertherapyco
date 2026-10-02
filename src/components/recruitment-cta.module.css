@@ -1,3 +1,24 @@
+.closing {
+  padding-block: 3.5rem;
+  border-block: 1px solid var(--line);
+  background: var(--sage);
+}
+
+.inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.copy {
+  max-width: 48rem;
+}
+
+.description {
+  max-width: 44rem;
+  margin-top: 1.3rem;
+}
+
 .applyActions {
   display: flex;
   flex-direction: column;
@@ -6,11 +27,12 @@
 }
 
 @media (min-width: 1000px) {
-  .closing.closing {
-    min-height: 460px;
+  .closing {
+    padding-block: 3rem;
   }
 
-  .closing .closingCopy {
-    padding-block: 3rem;
+  .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(3rem, 6vw, 6rem);
   }
 }

@@ -28,7 +28,7 @@ export default function TherapistsPage() {
           </div>
         </div>
       </section>
-      <ClosingCTA />
+      <ClosingCTA variant="split" />
       <RecruitmentCTA />
     </>
   );
