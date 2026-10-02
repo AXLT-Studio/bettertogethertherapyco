@@ -1,0 +1,314 @@
+.hero,
+.closing {
+  display: grid;
+  border-bottom: 1px solid var(--line);
+}
+
+.splitCopy {
+  display: flex;
+  align-items: center;
+  padding: 4.5rem var(--gutter);
+}
+
+.copyInner {
+  width: 100%;
+  max-width: 35rem;
+}
+
+.copyInner :global(.eyebrow) {
+  margin-bottom: 1.25rem;
+}
+
+.splitDescription {
+  margin-block: 1.875rem;
+  max-width: 30rem;
+}
+
+.heroImage,
+.closingImage,
+.jobImage {
+  position: relative;
+  overflow: hidden;
+  background: var(--sage);
+}
+
+.heroImage {
+  aspect-ratio: 4 / 3;
+}
+
+.heroImage img,
+.closingImage img,
+.jobImage img {
+  object-fit: cover;
+}
+
+.spaciousSection {
+  padding-block: 5rem;
+}
+
+.intro {
+  display: grid;
+  gap: 1.75rem;
+  margin-bottom: 4.5rem;
+}
+
+.intro :global(.section-heading) {
+  margin-bottom: 0;
+}
+
+.intro > p,
+.intro > div > p {
+  max-width: 30rem;
+}
+
+.values {
+  --values-gap: 3.25rem;
+  display: grid;
+  gap: var(--values-gap);
+}
+
+.value {
+  position: relative;
+}
+
+.value + .value::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--values-gap) / -2);
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+}
+
+.valueIcon {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.value p {
+  margin-top: 1.125rem;
+  max-width: 32rem;
+}
+
+.audienceSection {
+  padding-block: 4.5rem;
+  background: color-mix(in srgb, var(--sage) 50%, var(--background));
+  border-block: 1px solid var(--line);
+}
+
+.audienceSection .intro {
+  margin-bottom: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.chips li {
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  background: var(--sage);
+  font-size: 0.8rem;
+}
+
+.positionsIntro {
+  margin-bottom: 3.5rem;
+}
+
+.job {
+  display: grid;
+  gap: 2rem;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  transition: border-color 220ms ease-out;
+}
+
+.job:hover,
+.job:focus-visible {
+  border-color: var(--accent);
+}
+
+.jobCopy {
+  min-width: 0;
+}
+
+.jobCopy h3 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.metadata {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.metadata li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.metadata svg {
+  flex: 0 0 1.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.jobImage {
+  aspect-ratio: 3 / 2;
+}
+
+.jobImage img {
+  transition: transform 220ms ease-out;
+}
+
+.job:hover .jobImage img {
+  transform: scale(1.015);
+}
+
+.jobAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 44px;
+  font-size: 0.85rem;
+}
+
+.jobAction > :global([aria-hidden]) {
+  font-size: 1.5rem;
+  transition: transform 220ms ease-out;
+}
+
+.job:hover .jobAction > :global([aria-hidden]) {
+  transform: translateX(3px);
+}
+
+.closing {
+  background: var(--sage);
+  border-top: 1px solid var(--line);
+}
+
+.closingImage {
+  aspect-ratio: 4 / 3;
+}
+
+.closingImage img {
+  object-position: center;
+}
+
+@media (max-width: 374px) {
+  .job {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .intro {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 4rem;
+  }
+
+  .spaciousSection {
+    padding-block: 7.5rem;
+  }
+
+  .audienceSection {
+    padding-block: 5.5rem;
+  }
+
+  .job {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    padding: 2.5rem;
+  }
+
+  .jobAction {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero {
+    grid-template-columns: 52% 48%;
+    min-height: 600px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 4.4vw, 4.5rem);
+  }
+
+  .heroImage,
+  .closingImage {
+    aspect-ratio: auto;
+  }
+
+  .hero .splitCopy {
+    padding-left: max(var(--gutter), calc((100vw - 1280px) / 2));
+    padding-right: clamp(3rem, 4.5vw, 5rem);
+  }
+
+  .values {
+    --values-gap: clamp(3.5rem, 5vw, 5rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .value + .value::before {
+    top: 0;
+    bottom: 0;
+    left: calc(var(--values-gap) / -2);
+    width: 1px;
+    height: auto;
+  }
+
+  .job {
+    grid-template-columns: minmax(0, 55fr) minmax(0, 35fr) minmax(2rem, 10fr);
+    gap: 2rem;
+    padding: 3rem;
+  }
+
+  .jobAction {
+    grid-column: auto;
+    justify-content: flex-end;
+  }
+
+  .jobAction > span:first-child {
+    display: none;
+  }
+
+  .closing {
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+  }
+
+  .closing .splitCopy {
+    padding: 4rem max(var(--gutter), calc((100vw - 1280px) / 2)) 4rem clamp(3rem, 5vw, 5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job,
+  .jobImage img,
+  .jobAction > :global([aria-hidden]) {
+    transition: none;
+  }
+
+  .job:hover .jobImage img,
+  .job:hover .jobAction > :global([aria-hidden]) {
+    transform: none;
+  }
+}
