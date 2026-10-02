@@ -374,6 +374,8 @@
   }
   .footer-navigation .client-portal-link {
     justify-self: start;
+    margin-top: 1.75rem;
+    padding-block: 0.55rem;
   }
   .mobile-navigation a[data-active],
   .desktop-navigation a[data-active] {
@@ -1411,16 +1413,18 @@
     font-size: 0.9rem;
   }
   .footer-navigation {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.25rem 1.5rem;
-    align-content: start;
     font-size: 0.85rem;
   }
-  .footer-navigation > a {
+  .footer-navigation-links {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem 1.5rem;
+    align-content: start;
+  }
+  .footer-navigation-links > a {
     padding-block: 0.55rem;
   }
-  .footer-navigation > a:hover,
+  .footer-navigation-links > a:hover,
   .footer-bottom a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -1485,6 +1489,9 @@
   }
 
   @media (min-width: 600px) {
+    .footer-navigation-links {
+      grid-template-columns: minmax(0, 1fr) minmax(max-content, 1fr);
+    }
     .insurance-plan-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));

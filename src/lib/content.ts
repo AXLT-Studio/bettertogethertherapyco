@@ -343,9 +343,9 @@ export const samanthaSerbin: Therapist = {
 export const shellyKessinger: Therapist = {
   slug: "shelly-kessinger",
   name: "Shelly Kessinger",
-  credentials: null,
+  credentials: "LPC",
   role: "Therapist",
-  professionalTitle: "Counselor · 16+ Years of Experience",
+  professionalTitle: "Licensed Professional Counselor · 16+ Years of Experience",
   initials: "SK",
   portrait: {
     src: "/images/therapists/shelly-kessinger.png",

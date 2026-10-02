@@ -21,22 +21,24 @@ export function Footer() {
             </p>
           </div>
           <nav className="footer-navigation" aria-label="Footer navigation">
-            {navigation.map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                {...getPracticeLinkAttributes(href)}
-                className={
-                  href === practiceLinks.clientPortal
-                    ? "button button--secondary client-portal-link"
-                    : undefined
-                }
-              >
-                {label}
-                {href === practiceLinks.clientPortal}
-              </Link>
-            ))}
-            <Link href="/contact">Contact</Link>
+            <div className="footer-navigation-links">
+              {navigation
+                .filter(({ href }) => href !== practiceLinks.clientPortal)
+                .map(({ label, href }) => (
+                  <Link key={href} href={href}>
+                    {label}
+                  </Link>
+                ))}
+              <Link href="/contact">Contact</Link>
+              <Link href="/careers">Careers</Link>
+            </div>
+            <Link
+              href={practiceLinks.clientPortal}
+              {...getPracticeLinkAttributes(practiceLinks.clientPortal)}
+              className="button button--secondary client-portal-link"
+            >
+              Client Portal
+            </Link>
           </nav>
           <div className="footer-contact">
             <p className="eyebrow">Let’s connect</p>
