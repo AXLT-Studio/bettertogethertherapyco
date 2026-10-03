@@ -75,7 +75,10 @@ export function Footer() {
         </div>
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Better Together Therapy</p>
-          <Link href="/privacy">Privacy Policy</Link>
+          <div className="footer-policy-links">
+            {/* <Link href="/privacy">Privacy Policy</Link> */}
+            <Link href="/patient-rights">Patient Rights</Link>
+          </div>
         </div>
       </div>
     </footer>

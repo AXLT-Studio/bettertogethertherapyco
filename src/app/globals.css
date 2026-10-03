@@ -1485,7 +1485,12 @@
     border-top: 1px solid var(--line);
     padding-top: 1.2rem;
   }
-  .footer-bottom > a {
+  .footer-policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+  .footer-policy-links > a {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
